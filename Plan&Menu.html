@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Freshley</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/jquery.steps.css" />
+    <!-- jQuery library -->
+
+    <!--myscript-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+    <script defer src="js/jquery.steps.js"></script>
+    <script defer src="js/freshleyscript.js"></script>
+  </head>
+
+  <body>
+    <form id="my-form" method="post">
+      <div>
+        <h3>Account</h3>
+        <section>
+    <div class="wrapper">
+        <div class="package">
+        <div class="name">Limited</div>
+        <div class="price"><strong>$2</strong> / month per user</div>
+        <div class="trial">Available for a month</div>
+        <hr>
+        <ul>
+            <li>
+                <span >&#62;</span>
+                <strong>8</strong>
+                Team members
+            </li>
+            <li>
+                <span >&#62;</span>
+                <strong>6</strong>
+                Team playlists
+            </li>
+            <li>
+                <span >&#62;</span>
+                <strong>15</strong>
+                Public playlists
+            </li>
+        </ul>
+        <button class="get">Get started </button>
+    </div>
+        </section>
+        <h3>Profile</h3>
+        <section>
+          <label for="name">First name *</label>
+          <input id="name" name="name" type="text" class="required" />
+          <label for="surname">Last name *</label>
+          <input id="surname" name="surname" type="text" class="required" />
+          <label for="email">Email *</label>
+          <input id="email" name="email" type="text" class="required email" />
+          <label for="address">Address</label>
+          <input id="address" name="address" type="text" />
+          <p>(*) Mandatory</p>
+        </section>
+        <h3>Finish</h3>
+        <section>
+          <input
+            id="acceptTerms"
+            name="acceptTerms"
+            type="checkbox"
+            class="required"
+          />
+          <label for="acceptTerms"
+            >I agree with the Terms and Conditions.</label
+          >
+        </section>
+      </div>
+    </form>
+  </body>
+</html>

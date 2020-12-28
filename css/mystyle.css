@@ -1,0 +1,139 @@
+body {
+  font-family: Roboto, sans-serif;
+  color: #333;
+  font-size: 0.875rem;
+  line-height: 1.43em;
+  font-weight: 400;
+}
+.plans-menu-hero-section {
+  overflow: hidden;
+  padding: 115px 16px 60px;
+  text-align: center;
+  margin-top: 120px;
+}
+
+.w-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 940px;
+}
+.w-container:before,
+.w-container:after {
+  content: " ";
+  display: table;
+  grid-column-start: 1;
+  grid-row-start: 1;
+  grid-column-end: 2;
+  grid-row-end: 2;
+}
+.w-container:after {
+  clear: both;
+}
+
+.meal-box-flow-div {
+  display: flex;
+  margin-top: 40px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.display-1.plans-menu-title {
+  font-family: GoodHeadlineProCondMedium, Verdana, sans-serif;
+  color: #030;
+  font-size: 2.875rem;
+  line-height: 1.2em;
+  letter-spacing: 0.23rem;
+  font-weight: 500;
+}
+.sub-text-for-meals {
+  margin-top: 24px;
+  color: #030;
+  font-size: 1rem;
+}
+.normal-green-text {
+  font-weight: 700;
+}
+.greenarrow {
+  height: 85px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+._130-box {
+  height: 124px;
+}
+.plans-card-parent {
+  display: flex;
+  margin-bottom: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: space-around;
+  flex-direction: row;
+  padding: 50px;
+}
+.card-content {
+  box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+  text-align: center;
+  margin-right: 16px;
+  margin-bottom: 24px;
+  margin-left: 16px;
+  padding: 35px 22px 16px;
+  width: 21%;
+  transition: all 300ms ease;
+  text-decoration: none;
+  font-family: GoodHeadlineProCondLight, sans-serif;
+}
+.card-content:hover {
+  box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.5);
+}
+.select-menu {
+  width: 100%;
+  padding: 12px 34px;
+  border-radius: 3px;
+  background-color: #07872b;
+  transition: background-color 300ms ease;
+  font-family: GoodHeadlineProCondLight, sans-serif;
+  color: #fff;
+  font-size: 15px;
+  line-height: 1.2em;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.select-menu:hover {
+  background-color: #333;
+}
+.section-footer-text.add-top-margin {
+  padding-top: 5px;
+  font-family: GoodHeadlineProCondMedium, Verdana, sans-serif;
+  text-align: center;
+}
+.section-footer-text {
+  font-family: ff-good-headline-web-pro-con;
+  font-size: 20px;
+  letter-spacing: 3px;
+}
+@media screen and (max-width: 991px) {
+  .section-footer-text.add-top-margin {
+    margin-top: 24px;
+  }
+}
+@media screen and (max-width: 479px) {
+  ._130-box {
+    height: 80px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .greenarrow {
+    height: 40px;
+  }
+}
