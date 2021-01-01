@@ -56,13 +56,14 @@ $(document).ready(function () {
   var selected_date_to_order = "";
   var item_to_highlight = "";
   var today = new Date();
+  console.log(today);
   for (i = 0; i < 10; i++) {
     var get_date_monday = GetDateFOrList(today, i);
     $("#list-item-" + (i + 1)).text(get_date_monday);
   }
-  $("#list-item-1").click(function () {
-    HighlightList("#list-item-1");
-  });
+
+  HighlightList("#list-item-1");
+
   $("#list-item-2").click(function () {
     HighlightList("#list-item-2");
   });
@@ -90,102 +91,174 @@ $(document).ready(function () {
   $("#list-item-10").click(function () {
     HighlightList("#list-item-10");
   });
-
+  $("#day-to-select").click(function () {
+    $("#next-button-to-day").click();
+  });
+  $("#set-to-go").hide();
+  $("#not-to-go").show();
   var plan_length = 0;
   var current_plan_length = 0;
   $("#weak-plan-4").click(function () {
     plan_length = 4;
     $("#no-of-meals").text(plan_length);
+    $("#next-button-to-day").click();
   });
   $("#weak-plan-6").click(function () {
     plan_length = 6;
     $("#no-of-meals").text(plan_length);
+    $("#next-button-to-day").click();
   });
   $("#weak-plan-10").click(function () {
     plan_length = 10;
     $("#no-of-meals").text(plan_length);
+    $("#next-button-to-day").click();
   });
   $("#weak-plan-12").click(function () {
     plan_length = 12;
     $("#no-of-meals").text(plan_length);
+    $("#next-button-to-day").click();
   });
   $("#get-item-8").click(function () {
     if (current_plan_length < plan_length) {
-      CreateCart("#cart-list", "#value-item-8","#img-item-8");
+      CreateCart("#cart-list", "#value-item-8", "#img-item-8");
     } else {
+      $("#final-order").removeAttr("disabled");
       alert("Plan Limit Exceed");
     }
 
     current_plan_length++;
+    if (plan_length - current_plan_length > 0) {
+      $("#no-of-meals").text(plan_length - current_plan_length);
+    } else {
+      ShowOrderLeft();
+    }
   });
   $("#get-item-7").click(function () {
     if (current_plan_length < plan_length) {
-      CreateCart("#cart-list", "#value-item-7","#img-item-7");
+      CreateCart("#cart-list", "#value-item-7", "#img-item-7");
     } else {
+      $("#final-order").removeAttr("disabled");
       alert("Plan Limit Exceed");
     }
 
     current_plan_length++;
+    if (plan_length - current_plan_length > 0) {
+      $("#no-of-meals").text(plan_length - current_plan_length);
+    } else {
+      ShowOrderLeft();
+    }
   });
   $("#get-item-6").click(function () {
     if (current_plan_length < plan_length) {
-      CreateCart("#cart-list", "#value-item-6","#img-item-6");
+      CreateCart("#cart-list", "#value-item-6", "#img-item-6");
     } else {
+      $("#final-order").removeAttr("disabled");
       alert("Plan Limit Exceed");
     }
 
     current_plan_length++;
+    if (plan_length - current_plan_length > 0) {
+      $("#no-of-meals").text(plan_length - current_plan_length);
+    } else {
+      ShowOrderLeft();
+    }
   });
   $("#get-item-5").click(function () {
     if (current_plan_length < plan_length) {
-      CreateCart("#cart-list", "#value-item-5","#img-item-5");
+      CreateCart("#cart-list", "#value-item-5", "#img-item-5");
     } else {
+      $("#final-order").removeAttr("disabled");
       alert("Plan Limit Exceed");
     }
 
     current_plan_length++;
+    if (plan_length - current_plan_length > 0) {
+      $("#no-of-meals").text(plan_length - current_plan_length);
+    } else {
+      ShowOrderLeft();
+    }
   });
   $("#get-item-4").click(function () {
     if (current_plan_length < plan_length) {
-      CreateCart("#cart-list", "#value-item-4","#img-item-4");
+      CreateCart("#cart-list", "#value-item-4", "#img-item-4");
     } else {
+      $("#final-order").removeAttr("disabled");
       alert("Plan Limit Exceed");
     }
 
     current_plan_length++;
+    if (plan_length - current_plan_length > 0) {
+      $("#no-of-meals").text(plan_length - current_plan_length);
+    } else {
+      ShowOrderLeft();
+    }
   });
   $("#get-item-3").click(function () {
     if (current_plan_length < plan_length) {
-      CreateCart("#cart-list", "#value-item-3","#img-item-3");
+      CreateCart("#cart-list", "#value-item-3", "#img-item-3");
     } else {
+      $("#final-order").removeAttr("disabled");
       alert("Plan Limit Exceed");
     }
 
     current_plan_length++;
+    if (plan_length - current_plan_length > 0) {
+      $("#no-of-meals").text(plan_length - current_plan_length);
+    } else {
+      ShowOrderLeft();
+    }
   });
   $("#get-item-2").click(function () {
     if (current_plan_length < plan_length) {
-      CreateCart("#cart-list", "#value-item-2","#img-item-2");
+      CreateCart("#cart-list", "#value-item-2", "#img-item-2");
     } else {
+      $("#final-order").removeAttr("disabled");
       alert("Plan Limit Exceed");
     }
 
     current_plan_length++;
+    if (plan_length - current_plan_length > 0) {
+      $("#no-of-meals").text(plan_length - current_plan_length);
+    } else {
+      ShowOrderLeft();
+    }
   });
   $("#get-item-1").click(function () {
     if (current_plan_length < plan_length) {
-      CreateCart("#cart-list", "#value-item-1","#img-item-1");
+      CreateCart("#cart-list", "#value-item-1", "#img-item-1");
     } else {
+      $("#final-order").removeAttr("disabled");
       alert("Plan Limit Exceed");
     }
 
     current_plan_length++;
+    if (plan_length - current_plan_length > 0) {
+      $("#no-of-meals").text(plan_length - current_plan_length);
+    } else {
+      ShowOrderLeft();
+    }
   });
-  function CreateCart(cart_id, item_name_id,item_img_id) {
+  function ShowOrderLeft() {
+    $("#set-to-go").show();
+    $("#not-to-go").hide();
+    $("#final-order").removeAttr("disabled");
+    $("#final-order").css("background-color", " #07872b");
+    $("#final-order").hover(
+      function () {
+        $(this).css("background-color", " #333");
+      },
+      function () {
+        $(this).css("background-color", " #07872b");
+      }
+    );
+  }
+  $("#final-order").click(function () {
+    $("#next-button-to-day").click();
+  });
+  function CreateCart(cart_id, item_name_id, item_img_id) {
     var CartList = $(cart_id);
-    var img_in_cart=$(item_img_id).attr("src");
+    var img_in_cart = $(item_img_id).attr("src");
     var item_in_cart = $(item_name_id).text();
-    console.log(img_in_cart);
     var item = document.createElement("div");
     item.className = "pd-1 row mt-3 ";
     var item_image = document.createElement("div");
@@ -193,7 +266,7 @@ $(document).ready(function () {
     var image = document.createElement("img");
     image.className = "cart-list-menu-image ";
     image.style.width = "100%";
-    image.src =img_in_cart;
+    image.src = img_in_cart;
     item_image.appendChild(image);
 
     var item_text = document.createElement("div");
@@ -203,11 +276,53 @@ $(document).ready(function () {
     item_text.append(item_image_name);
     var crossx = document.createElement("div");
     crossx.className = "col-2 mt-3 font-weight-bold";
+    crossx.style.cursor = "pointer";
     crossx.textContent = "x";
+
+    $(crossx).click(function () {
+      $(item).remove();
+      current_plan_length--;
+      $("#no-of-meals").text(plan_length - current_plan_length);
+    });
     item.append(item_image);
     item.append(item_text);
     item.append(crossx);
     CartList.append(item);
+    var Final_Cart = $("#checkout-div-content");
+    var final_item = document.createElement("div");
+    final_item.className = "row cart-list-menu p-3";
+
+    var final_item_number = document.createElement("div");
+    final_item_number.className = "col-1 mt-4";
+    final_item_number.textContent = "1";
+
+    var final_item_img_div = document.createElement("div");
+    final_item_img_div.className = "col-3 mt-2";
+    var final_item_img = document.createElement("img");
+    final_item_img.className = "cart-list-menu-image";
+    final_item_img.style.width = "100%";
+    final_item_img.src = img_in_cart;
+    final_item_img_div.appendChild(final_item_img);
+
+    var final_item_text_div = document.createElement("div");
+    final_item_text_div.className = "col-8 mt-2";
+
+    var final_item_name_para = document.createElement("p");
+    final_item_name_para.className = "cart-list-menu-heading mt-2";
+    final_item_name_para.textContent = item_in_cart;
+
+    var final_item_name_para_sub = document.createElement("p");
+    final_item_name_para_sub.className =
+      "text-success cart-list-menu-sub-heading";
+    final_item_name_para_sub.textContent = "with Hearty White Beans & Kale";
+
+    final_item_text_div.appendChild(final_item_name_para);
+    final_item_text_div.appendChild(final_item_name_para_sub);
+
+    final_item.append(final_item_number);
+    final_item.append(final_item_img_div);
+    final_item.append(final_item_text_div);
+    Final_Cart.append(final_item);
   }
   function MealListener(
     show1,
@@ -276,7 +391,8 @@ $(document).ready(function () {
     console.log(day);
     var daystoskip = 7 - day;
     var nextMonday = new Date();
-    nextMonday.setDate(day + daystoskip + count);
+    nextMonday.setDate(daystoskip + 2 + count);
+    console.log(nextMonday);
 
     var currentmonth = months[nextMonday.getMonth()] + " ";
     var currentdate = nextMonday.getDate();

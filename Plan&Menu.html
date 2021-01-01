@@ -180,13 +180,15 @@
         <div class="step-tab-panel" data-step="step2">
           <div class="row">
             <div class="col text-center">
-              <h5 class="text-uppercase my-4 d-none d-md-block">
+              <h6
+                class="text-uppercase my-4 mr-4 font-weight-bold d-none d-md-block"
+              >
                 Choose a delivery day
-              </h5>
+              </h6>
             </div>
           </div>
           <div class="row">
-            <div class="col col-sm-8 col-md-6 col-lg-5 col-xl-4 mx-auto">
+            <div class="col col-sm-10 col-md-10 col-lg-10 col-xl-5 mx-auto">
               <div
                 id="datePickerContainer"
                 class="scrollable-date-picker mb-3 mt-4"
@@ -229,9 +231,9 @@
           <div class="container text-center">
             <p class="mt-2">Scroll for more delivery dates</p>
             <button
+              id="day-to-select"
               type="submit"
-              data-test="submit-date"
-              class="col col-sm-8 col-md-6 col-lg-5 col-xl-4 mx-auto btn btn-block-next"
+              class="col col-sm-10 col-md-10 col-lg-10 col-xl-4 mx-auto btn btn-block-next"
             >
               NEXT
             </button>
@@ -356,11 +358,11 @@
         <div class="step-tab-panel" data-step="step3">
           <div class="content-fluid">
             <div class="row mt-3">
-              <div class="col-md-10">
-                <div class="ml-2 mb-2 mt-2 flex-container">
+              <div class="col-sm-10">
+                <div class="flex-container">
                   <div class="m-2 display-meals-items">
                     <img
-                    id="img-item-1"
+                      id="img-item-1"
                       src="https://res.cloudinary.com/freshly/image/upload/c_scale,w_640/c_crop,h_341,w_512/v1602724105/production-meal-image-57e49562-348b-42f2-9ca6-9f40a95c8395.jpg"
                       alt=""
                     />
@@ -410,7 +412,7 @@
 
                   <div class="m-2 display-meals-items">
                     <img
-                    id="img-item-2"
+                      id="img-item-2"
                       src="https://res.cloudinary.com/freshly/image/upload/c_scale,w_640/c_crop,h_341,w_512/v1607770959/production-meal-image-7a62bb89-9bcb-4f1f-9f0f-d8372698d48e.jpg"
                       alt=""
                     />
@@ -459,7 +461,7 @@
                   </div>
                   <div class="m-2 display-meals-items">
                     <img
-                    id="img-item-3"
+                      id="img-item-3"
                       src="https://res.cloudinary.com/freshly/image/upload/c_scale,w_640/c_crop,h_341,w_512/v1602723110/production-meal-image-0a78bae3-2e0c-4ab7-b420-154ed262d4d0.jpg"
                       alt=""
                     />
@@ -508,7 +510,7 @@
                   </div>
                   <div class="m-2 display-meals-items">
                     <img
-                    id="img-item-4"
+                      id="img-item-4"
                       src="https://res.cloudinary.com/freshly/image/upload/c_scale,w_640/c_crop,h_341,w_512/v1602721634/production-meal-image-8771fb54-2c23-4063-8007-f5024df074c2.jpg"
                       alt=""
                     />
@@ -557,7 +559,7 @@
                   </div>
                   <div class="m-2 display-meals-items">
                     <img
-                    id="img-item-5"
+                      id="img-item-5"
                       src="https://res.cloudinary.com/freshly/image/upload/c_scale,w_640/c_crop,h_341,w_512/v1602723731/production-meal-image-2b1d9d32-e0de-44b4-a2c5-9c7fa22203d5.jpg"
                       alt=""
                     />
@@ -606,7 +608,7 @@
                   </div>
                   <div class="m-2 display-meals-items">
                     <img
-                    id="img-item-6"
+                      id="img-item-6"
                       src="https://res.cloudinary.com/freshly/image/upload/c_scale,w_640/c_crop,h_341,w_512/v1602722020/production-meal-image-1a05b254-2fc5-4eec-9cec-5b1cde753c06.jpg"
                       alt=""
                     />
@@ -655,7 +657,7 @@
                   </div>
                   <div class="m-2 display-meals-items">
                     <img
-                    id="img-item-7"
+                      id="img-item-7"
                       src="https://res.cloudinary.com/freshly/image/upload/c_scale,w_640/c_crop,h_341,w_512/v1605813866/production-meal-image-1eab0dae-fb76-4485-9b1b-eaa125cae6c6.jpg"
                       alt=""
                     />
@@ -704,7 +706,7 @@
                   </div>
                   <div class="m-2 display-meals-items">
                     <img
-                    id="img-item-8"
+                      id="img-item-8"
                       src="https://res.cloudinary.com/freshly/image/upload/c_scale,w_640/c_crop,h_341,w_512/v1602724174/production-meal-image-13231efa-1905-40d4-aca2-208524d1dab1.jpg"
                       alt=""
                     />
@@ -754,11 +756,12 @@
                 </div>
               </div>
 
-              <div class="col-md-2 w-100">
+              <div class="col-sm-2 cart-menu-style">
                 <div class="cart-message-style p-2">
                   <p>My delivery for:</p>
                   <h4 id="delievery-date">Monday, Jan 4</h4>
                   <button
+                    id="final-order"
                     type="submit"
                     data-test="submit-date"
                     class="mb-2 mt-2 btn btn-success w-100"
@@ -766,8 +769,12 @@
                   >
                     NEXT
                   </button>
-                  <p class="mt-1 text-center">
-                    Add <b id="no-of-meals"> 4 </b> meals to continue.
+                  <p id="not-to-go" class="mt-1 text-center">
+                    <b class="text-danger">!</b> Add
+                    <b id="no-of-meals"> 4 </b> meals to continue.
+                  </p>
+                  <p id="set-to-go" class="mt-1 text-center">
+                    <b> All Set for Order Now.</b>
                   </p>
                 </div>
                 <div>
@@ -784,9 +791,9 @@
           <div class="container">
             <div class="row mt-4">
               <div class="col-md-7">
-                <h2 class="ml-3">CHECKOUT</h2>
+                <h4 class="ml-3"><b>CHECKOUT</b></h4>
                 <div class="checkout-info">
-                  <h3>Delievery Address</h3>
+                  <h5 class="mb-1"><b>Delievery Address</b></h5>
                   <div class="checkout-info-detail">
                     <div class="row">
                       <div class="col-6">
@@ -990,7 +997,7 @@
                 </div>
               </div>
               <div class="col-md-5">
-                <h2 class="cart-list-heading-text">ORDER SUMMARY</h2>
+                <h4 class="cart-list-heading-text"><b>ORDER SUMMARY</b></h4>
                 <div class="checkout-info-summary">
                   <div class="row">
                     <div class="col-12">
@@ -1032,80 +1039,22 @@
                     <div class="col-3 text-dark"><b>$51.95</b></div>
                   </div>
                 </div>
-                <h2 class="mt-4 cart-list-heading-text">MY MEALS</h2>
-                <div class="row mt-4 cart-list-menu p-3">
-                  <div class="col-1 mt-4">1</div>
-                  <div class="col-3 mt-2">
-                    <img
-                      class="cart-list-menu-image"
-                      style="width: 100%"
-                      src="https://res.cloudinary.com/freshly/image/upload/c_scale,w_640/c_crop,h_341,w_512/v1607770959/production-meal-image-7a62bb89-9bcb-4f1f-9f0f-d8372698d48e.jpg"
-                      alt=""
-                    />
-                  </div>
-                  <div class="col-8 mt-2">
-                    <p class="cart-list-menu-heading mt-2">CHICKEN LIVORNO</p>
-                    <p class="text-success cart-list-menu-sub-heading">
-                      <i>with Hearty White Beans & Kale</i>
-                    </p>
-                  </div>
-                </div>
-                <div class="row cart-list-menu p-3">
-                  <div class="col-1 mt-4">1</div>
-                  <div class="col-3 mt-2">
-                    <img
-                      class="cart-list-menu-image"
-                      src="https://res.cloudinary.com/freshly/image/upload/c_scale,w_640/c_crop,h_341,w_512/v1607770959/production-meal-image-7a62bb89-9bcb-4f1f-9f0f-d8372698d48e.jpg"
-                      alt=""
-                    />
-                  </div>
-                  <div class="col-8 mt-2">
-                    <p class="cart-list-menu-heading mt-2">CHICKEN LIVORNO</p>
-                    <p class="text-success cart-list-menu-sub-heading">
-                      <i>with Hearty White Beans & Kale</i>
-                    </p>
-                  </div>
-                </div>
-                <div class="row cart-list-menu p-3">
-                  <div class="col-1 mt-4">1</div>
-                  <div class="col-3 mt-2">
-                    <img
-                      class="cart-list-menu-image"
-                      src="https://res.cloudinary.com/freshly/image/upload/c_scale,w_640/c_crop,h_341,w_512/v1607770959/production-meal-image-7a62bb89-9bcb-4f1f-9f0f-d8372698d48e.jpg"
-                      alt=""
-                    />
-                  </div>
-                  <div class="col-8 mt-2">
-                    <p class="cart-list-menu-heading mt-2">CHICKEN LIVORNO</p>
-                    <p class="text-success cart-list-menu-sub-heading">
-                      <i>with Hearty White Beans & Kale</i>
-                    </p>
-                  </div>
-                </div>
-                <div class="row cart-list-menu p-3">
-                  <div class="col-1 mt-4">1</div>
-                  <div class="col-3 mt-2">
-                    <img
-                      class="cart-list-menu-image"
-                      src="https://res.cloudinary.com/freshly/image/upload/c_scale,w_640/c_crop,h_341,w_512/v1607770959/production-meal-image-7a62bb89-9bcb-4f1f-9f0f-d8372698d48e.jpg"
-                      alt=""
-                    />
-                  </div>
-                  <div class="col-8 mt-2">
-                    <p class="cart-list-menu-heading mt-2">CHICKEN LIVORNO</p>
-                    <p class="text-success cart-list-menu-sub-heading">
-                      <i>with Hearty White Beans & Kale</i>
-                    </p>
-                  </div>
-                </div>
+                <h4 class="mt-4 cart-list-heading-text"><b>MY MEALS</b></h4>
+                <div id="checkout-div-content"></div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="step-footer">
+      <div class="step-footer d-none">
         <button data-step-action="prev" class="step-btn">Previous</button>
-        <button data-step-action="next" class="step-btn">Next</button>
+        <button
+          data-step-action="next"
+          id="next-button-to-day"
+          class="step-btn"
+        >
+          Next
+        </button>
         <button data-step-action="finish" class="step-btn">Finish</button>
       </div>
     </div>

@@ -310,6 +310,10 @@ ul.order-datelist {
 .cart-list-heading-text {
   margin-left: -25px;
 }
+.cart-menu-style {
+  width: 320px;
+  margin: 0px;
+}
 @media screen and (max-width: 610px) {
   .plans-tabs-div {
     width: 100%;
