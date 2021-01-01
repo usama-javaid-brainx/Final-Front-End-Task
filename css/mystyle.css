@@ -219,10 +219,7 @@ ul.order-datelist {
   color: #ffff;
 }
 .flex-container {
-  display: flex;
-  flex-wrap: wrap;
   background-color: white;
-  flex-direction: row;
 }
 .display-meals-items {
   max-width: 23%;
@@ -246,18 +243,18 @@ ul.order-datelist {
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
 .MealCard-module__name___1-v_g {
-  font-weight: 400;
+  font-weight: 900;
   font-family: Roboto;
-  font-size: 1.125rem;
-  line-height: 1.25rem;
-  letter-spacing: 1.8px;
-  color: #030;
+  font-size: 1rem;
+  line-height: 1.1rem;
+  letter-spacing: 1.2px;
+  color: #000;
 }
 .NutritionInfo-module__item___2aiD8 {
   font-weight: 400;
   font-family: Roboto;
-  font-size: 0.95rem;
-  line-height: 0.875rem;
+  font-size: 0.75rem;
+  line-height: 0.75rem;
   letter-spacing: normal;
   color: #757575;
 }
