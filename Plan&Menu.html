@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Freshley</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- font -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/jquery.steps@1.1.1/dist/jquery-steps.min.css"
+    />
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery.steps@1.1.1/dist/jquery-steps.min.js"></script>
+    <link rel="stylesheet" href="css/mystyle.css" />
+  </head>
+
+  <body>
+    <div class="step-app" id="demo">
+      <ul class="step-steps">
+        <li data-step-target="step1">Plans</li>
+        <li data-step-target="step2">Day</li>
+        <li data-step-target="step3">Meals</li>
+        <li data-step-target="step">Checkout</li>
+      </ul>
+      <div class="step-content">
+        <div class="step-tab-panel" data-step="step1">
+          <div class="plans-menu-hero-section">
+            <div class="w-container">
+              <div>
+                <div class="display-1 plans-menu-title">PLANS AND MENU</div>
+              </div>
+              <div class="meal-box-flow-div">
+                <img
+                  src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5f0c8e593ca544afcf2f939f_meal-sleeve_3x_rypa38.png"
+                  sizes="(max-width: 479px) 100vw, (max-width: 1279px) 138.1875px, 135.953125px"
+                  srcset="
+                    https://assets-global.website-files.com/5d03b4e130118314af624b20/5f0c8e593ca544afcf2f939f_meal-sleeve_3x_rypa38-p-500.png 500w,
+                    https://assets-global.website-files.com/5d03b4e130118314af624b20/5f0c8e593ca544afcf2f939f_meal-sleeve_3x_rypa38.png       672w
+                  "
+                  alt=""
+                  class="_130-box"
+                />
+                <img
+                  src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5f0c8ebcd2d2803042476949_greenarrow.png"
+                  alt=""
+                  class="greenarrow"
+                /><img
+                  src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5f0c8e59ce436094acd6545f_tray-meal_3x_ni4ilo.png"
+                  alt=""
+                  class="_130-box"
+                /><img
+                  src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5f0c8ebcd2d2803042476949_greenarrow.png"
+                  alt=""
+                  class="greenarrow"
+                /><img
+                  src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5f0c8e5842917b4c645fd05e_teriyaki_3x_sa4pxi.png"
+                  alt=""
+                  class="_130-box"
+                />
+              </div>
+              <div class="sub-text-for-meals">
+                Each Freshly meal is one serving, for one person, at one sitting
+                -
+                <span class="normal-green-text">just heat and eat.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="container-fluid d-none d-lg-block">
+            <div class="plans-card-parent">
+              <div class="card-content">
+                <h4>4 Meals</h4>
+                <h6>per week</h6>
+                <h6 class="mt-4"><b>$11.49 / Meal</b></h6>
+                <div id="weak-plan-4" class="select-menu">
+                  <a>Choose</a>
+                </div>
+              </div>
+
+              <div class="card-content">
+                <h4>6 Meals</h4>
+                <h6>per week</h6>
+                <h6 class="mt-4"><b>$9.49 / Meal</b></h6>
+                <div id="weak-plan-6" class="select-menu">
+                  <a>Choose</a>
+                </div>
+              </div>
+              <div class="card-content">
+                <h4>10 Meals</h4>
+                <h6>per week</h6>
+                <h6 class="mt-4"><b>$8.99 / Meal</b></h6>
+                <div id="weak-plan-10" class="select-menu">
+                  <a>Choose</a>
+                </div>
+              </div>
+              <div class="card-content">
+                <h4>12 Meals</h4>
+                <h6>per week</h6>
+                <h6 class="mt-4"><b>$8.49 / Meal</b></h6>
+                <div id="weak-plan-12" class="select-menu">
+                  <a>Choose</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container-fluid d-lg-none">
+            <div class="plans-tabs-div">
+              <div class="sub-headline-text">Meals per week:</div>
+              <div class="plans-tabs">
+                <ul class="menu-list">
+                  <li id="meal-4">4</li>
+                  <li id="meal-6">6</li>
+                  <li id="meal-10">10</li>
+                  <li id="meal-12">12</li>
+                </ul>
+              </div>
+              <div id="menu-4-list" class="container fluid card-content-menu">
+                <h4>4 Meals</h4>
+                <h6>per week</h6>
+                <h6 class="mt-4"><b>$11.49 / Meal</b></h6>
+                <div id="weak-plan-4" class="select-menu">
+                  <a>Select the 4 meal plan</a>
+                </div>
+              </div>
+              <div id="menu-6-list" class="container fluid card-content-menu">
+                <h4>6 Meals</h4>
+                <h6>per week</h6>
+                <h6 class="mt-4"><b>$9.49 / Meal</b></h6>
+                <div id="weak-plan-6" class="select-menu">
+                  <a>Select the 6 meal plan</a>
+                </div>
+              </div>
+              <div id="menu-10-list" class="container fluid card-content-menu">
+                <h4>10 Meals</h4>
+                <h6>per week</h6>
+                <h6 class="mt-4"><b>$8.99 / Meal</b></h6>
+                <div id="weak-plan-10" class="select-menu">
+                  <a>Select the 10 meal plan</a>
+                </div>
+              </div>
+              <div id="menu-12-list" class="container fluid card-content-menu">
+                <h4>12 Meals</h4>
+                <h6>per week</h6>
+                <h6 class="mt-4"><b>$8.49 / Meal</b></h6>
+                <div id="weak-plan-12" class="select-menu">
+                  <a>Select the 12 meal plan</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="section-footer-text add-top-margin mb-3">
+            SHIPPING&nbsp;ADDED&nbsp;AT&nbsp;CHECKOUT
+          </div>
+        </div>
+        <div class="step-tab-panel" data-step="step2">
+          <div class="row">
+            <div class="col text-center">
+              <h6
+                class="text-uppercase my-4 mr-4 font-weight-bold d-none d-md-block"
+              >
+                Choose a delivery day
+              </h6>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col col-sm-10 col-md-10 col-lg-10 col-xl-5 mx-auto">
+              <div
+                id="datePickerContainer"
+                class="scrollable-date-picker mb-3 mt-4"
+              >
+                <ul role="listbox" class="mb-2 list-group">
+                  <li id="list-item-1" class="list-group-item">
+                    Thursday, 25 1997
+                  </li>
+                  <li id="list-item-2" class="list-group-item">
+                    Thursday, 25 1997
+                  </li>
+                  <li id="list-item-3" class="list-group-item">
+                    Thursday, 25 1997
+                  </li>
+                  <li id="list-item-4" class="list-group-item">
+                    Thursday, 25 1997
+                  </li>
+                  <li id="list-item-5" class="list-group-item">
+                    Thursday, 25 1997
+                  </li>
+                  <li id="list-item-6" class="list-group-item">
+                    Thursday, 25 1997
+                  </li>
+                  <li id="list-item-7" class="list-group-item">
+                    Thursday, 25 1997
+                  </li>
+                  <li id="list-item-8" class="list-group-item">
+                    Thursday, 25 1997
+                  </li>
+                  <li id="list-item-9" class="list-group-item">
+                    Thursday, 25 1997
+                  </li>
+                  <li id="list-item-10" class="list-group-item">
+                    Thursday, 25 1997
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="container text-center">
+            <p class="mt-2">Scroll for more delivery dates</p>
+            <button
+              id="day-to-select"
+              type="submit"
+              class="col col-sm-10 col-md-10 col-lg-10 col-xl-4 mx-auto btn btn-block-next"
+            >
+              NEXT
+            </button>
+          </div>
+          <hr />
+          <div class="container">
+            <div class="row">
+              <div class="col text-center">
+                <h5 class="text-uppercase my-4 d-none d-md-block">
+                  COMMON QUESTIONS
+                </h5>
+              </div>
+            </div>
+            <div class="row">
+              <div id="accordion">
+                <div class="card">
+                  <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                      <button
+                        class="btn btn-link"
+                        data-toggle="collapse"
+                        data-target="#collapseOne"
+                        aria-expanded="true"
+                        aria-controls="collapseOne"
+                      >
+                        How many portions are your meals?
+                      </button>
+                    </h5>
+                  </div>
+
+                  <div
+                    id="collapseOne"
+                    class="collapse show"
+                    aria-labelledby="headingOne"
+                    data-parent="#accordion"
+                  >
+                    <div class="card-body">
+                      All of our meals are single serving and meant to feed an
+                      average adult. Our 6-meal plan is perfect for a person
+                      looking for 6 dinners (or lunches!) a week. On average,
+                      our meals weigh in at just about 13 ounces, which is about
+                      10% larger than similar competitors. What’s even better:
+                      our meals average just 500 calories and range from 300 to
+                      650 calories. If you have a larger household, we do offer
+                      a 12 meal per week subscription (it’s perfect for a family
+                      of 4 looking for 3 meals per week). Plus, you can always
+                      order multiple subscriptions.
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" id="headingTwo">
+                    <h5 class="mb-0">
+                      <button
+                        class="btn btn-link collapsed"
+                        data-toggle="collapse"
+                        data-target="#collapseTwo"
+                        aria-expanded="false"
+                        aria-controls="collapseTwo"
+                      >
+                        Do you accommodate dietary preferences?
+                      </button>
+                    </h5>
+                  </div>
+                  <div
+                    id="collapseTwo"
+                    class="collapse"
+                    aria-labelledby="headingTwo"
+                    data-parent="#accordion"
+                  >
+                    <div class="card-body">
+                      We accommodate a variety of dietary preferences, and
+                      always offer an entirely gluten– and peanut–free menu. As
+                      a customer, you can set your own dietary preferences and
+                      easily find the meals that work for you. You can also
+                      check out individual ingredient lists for each dish if you
+                      have specific concerns, or contact us at
+                      support@freshly.com for help making selections. If you’re
+                      unable to place an order that fits your preferences now,
+                      be sure to check back frequently as we’re always adding
+                      new and exciting dishes.
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" id="headingThree">
+                    <h5 class="mb-0">
+                      <button
+                        class="btn btn-link collapsed"
+                        data-toggle="collapse"
+                        data-target="#collapseThree"
+                        aria-expanded="false"
+                        aria-controls="collapseThree"
+                      >
+                        How long do the meals last?
+                      </button>
+                    </h5>
+                  </div>
+                  <div
+                    id="collapseThree"
+                    class="collapse"
+                    aria-labelledby="headingThree"
+                    data-parent="#accordion"
+                  >
+                    <div class="card-body">
+                      You won't find any artificial or chemical preservatives
+                      here so all of our freshly-prepared meals have a
+                      refrigerated shelf life of about 4-5 days. You can find a
+                      "use by" date on the back of each meal on the nutrition
+                      label. If you're ever unable to finish your meals within
+                      their shelf life, you can always pop them into the freezer
+                      for extended storage. Just be sure to microwave your meal
+                      straight from the freezer and add a few extra minutes to
+                      reach the 165° F internal temperature we recommend.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="step-tab-panel" data-step="step3">
+          <div class="content-fluid">
+            <div class="row mt-3">
+              <div class="col-md-10">
+                <div class="flex-container">
+                  <div class="row">
+                    <div
+                      class="col-xl-3 col-lg-3 col-md-6 col-sm-6 m-2 display-meals-items"
+                    >
+                      <img
+                        id="img-item-1"
+                        src="https://res.cloudinary.com/freshly/image/upload/c_scale,w_640/c_crop,h_341,w_512/v1602724105/production-meal-image-57e49562-348b-42f2-9ca6-9f40a95c8395.jpg"
+                        alt=""
+                      />
+                      <div class="p-3">
+                        <div class="MealCard-module__name___1-v_g">
+                          <p id="value-item-1">STEAK PEPPERCORN</p>
+                        </div>
+                        <p class="NutritionInfo-module__item___2aiD8">
+                          with Sautéed Carrots & French Green Beans
+                        </p>
+                        <div class="row">
+                          <div class="mt-2 col-md-6">
+                            <p class="NutritionInfo-module__item___2aiD8">
+                              510 Cals | 33g Carbs | 29g Protein
+                            </p>
+                          </div>
+                          <div class="col-md-6">
+                            <div
+                              id="get-item-1"
+                              class="text-center mt-2 add-button-icon"
+                            >
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="35"
+                                height="35"
+                                fill="white"
+                                class="bi bi-plus"
+                                viewBox="5 -1 10 20"
+                              >
+                                <path
+                                  d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+                                />
+                              </svg>
+                              <b
+                                style="
+                                  margin-left: -10px;
+                                  padding-right: 15px;
+                                  font-size: 1rem;
+                                "
+                                >Add</b
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      class="col-xl-3 col-lg-3 col-md-6 col-sm-6 m-2 display-meals-items"
+                    >
+                      <img
+                        id="img-item-2"
+                        src="https://res.cloudinary.com/freshly/image/upload/c_scale,w_640/c_crop,h_341,w_512/v1607770959/production-meal-image-7a62bb89-9bcb-4f1f-9f0f-d8372698d48e.jpg"
+                        alt=""
+                      />
+                      <div class="p-3">
+                        <div class="MealCard-module__name___1-v_g">
+                          <p id="value-item-2">CAULIFLOWER SHELL BEEF</p>
+                        </div>
+                        <p class="NutritionInfo-module__item___2aiD8">
+                          with Nonna’s Soffritto & Italian Cheeses
+                        </p>
+                        <div class="row">
+                          <div class="mt-2 col-md-6">
+                            <p class="NutritionInfo-module__item___2aiD8">
+                              540 Cals | 48g Carbs | 30g Protein
+                            </p>
+                          </div>
+                          <div class="col-md-6">
+                            <div
+                              id="get-item-2"
+                              class="text-center mt-2 add-button-icon"
+                            >
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="35"
+                                height="35"
+                                fill="white"
+                                class="bi bi-plus"
+                                viewBox="5 -1 10 20"
+                              >
+                                <path
+                                  d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+                                />
+                              </svg>
+                              <b
+                                style="
+                                  margin-left: -10px;
+                                  padding-right: 15px;
+                                  font-size: 1rem;
+                                "
+                                >Add</b
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="col-xl-3 col-lg-3 col-md-6 col-sm-6 m-2 display-meals-items"
+                    >
+                      <img
+                        id="img-item-3"
+                        src="https://res.cloudinary.com/freshly/image/upload/c_scale,w_640/c_crop,h_341,w_512/v1602723110/production-meal-image-0a78bae3-2e0c-4ab7-b420-154ed262d4d0.jpg"
+                        alt=""
+                      />
+                      <div class="p-3">
+                        <div class="MealCard-module__name___1-v_g">
+                          <p id="value-item-3">PROTEIN-PACKED CHICKEN</p>
+                        </div>
+                        <p class="NutritionInfo-module__item___2aiD8">
+                          with Mozzarella & Garlicky Broccoli
+                        </p>
+                        <div class="row">
+                          <div class="mt-2 col-md-6">
+                            <p class="NutritionInfo-module__item___2aiD8">
+                              420 Cals| 17g Carbs| 43g Protein
+                            </p>
+                          </div>
+                          <div class="col-md-6">
+                            <div
+                              id="get-item-3"
+                              class="text-center mt-2 add-button-icon"
+                            >
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="35"
+                                height="35"
+                                fill="white"
+                                class="bi bi-plus"
+                                viewBox="5 -1 10 20"
+                              >
+                                <path
+                                  d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+                                />
+                              </svg>
+                              <b
+                                style="
+                                  margin-left: -10px;
+                                  padding-right: 15px;
+                                  font-size: 1rem;
+                                "
+                                >Add</b
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="col-xl-3 col-lg-3 col-md-6 col-sm-6 m-2 display-meals-items"
+                    >
+                      <img
+                        id="img-item-4"
+                        src="https://res.cloudinary.com/freshly/image/upload/c_scale,w_640/c_crop,h_341,w_512/v1602721634/production-meal-image-8771fb54-2c23-4063-8007-f5024df074c2.jpg"
+                        alt=""
+                      />
+                      <div class="p-3">
+                        <div class="MealCard-module__name___1-v_g">
+                          <p id="value-item-4">HOMESTYLE CHICKEN</p>
+                        </div>
+                        <p class="NutritionInfo-module__item___2aiD8">
+                          with Masterful Mac & Cheese
+                        </p>
+                        <div class="row">
+                          <div class="mt-2 col-md-6">
+                            <p class="NutritionInfo-module__item___2aiD8">
+                              600 Cals| 45g Carbs| 46g Protein
+                            </p>
+                          </div>
+                          <div class="col-md-6">
+                            <div
+                              id="get-item-4"
+                              class="text-center mt-2 add-button-icon"
+                            >
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="35"
+                                height="35"
+                                fill="white"
+                                class="bi bi-plus"
+                                viewBox="5 -1 10 20"
+                              >
+                                <path
+                                  d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+                                />
+                              </svg>
+                              <b
+                                style="
+                                  margin-left: -10px;
+                                  padding-right: 15px;
+                                  font-size: 1rem;
+                                "
+                                >Add</b
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div
+                      class="col-xl-3 col-lg-3 col-md-6 col-sm-6 m-2 display-meals-items"
+                    >
+                      <img
+                        id="img-item-5"
+                        src="https://res.cloudinary.com/freshly/image/upload/c_scale,w_640/c_crop,h_341,w_512/v1602723731/production-meal-image-2b1d9d32-e0de-44b4-a2c5-9c7fa22203d5.jpg"
+                        alt=""
+                      />
+                      <div class="p-3">
+                        <div class="MealCard-module__name___1-v_g">
+                          <p id="value-item-5">SAUSAGE & PEPPERS</p>
+                        </div>
+                        <p class="NutritionInfo-module__item___2aiD8">
+                          with Carb Swap Cauliflower Rice
+                        </p>
+                        <div class="row">
+                          <div class="mt-2 col-md-6">
+                            <p class="NutritionInfo-module__item___2aiD8">
+                              500 Cals| 29g Carbs| 21g Protein
+                            </p>
+                          </div>
+                          <div class="col-md-6">
+                            <div
+                              id="get-item-5"
+                              class="text-center mt-2 add-button-icon"
+                            >
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="35"
+                                height="35"
+                                fill="white"
+                                class="bi bi-plus"
+                                viewBox="5 -1 10 20"
+                              >
+                                <path
+                                  d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+                                />
+                              </svg>
+                              <b
+                                style="
+                                  margin-left: -10px;
+                                  padding-right: 15px;
+                                  font-size: 1rem;
+                                "
+                                >Add</b
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="col-xl-3 col-lg-3 col-md-6 col-sm-6 m-2 display-meals-items"
+                    >
+                      <img
+                        id="img-item-6"
+                        src="https://res.cloudinary.com/freshly/image/upload/c_scale,w_640/c_crop,h_341,w_512/v1602722020/production-meal-image-1a05b254-2fc5-4eec-9cec-5b1cde753c06.jpg"
+                        alt=""
+                      />
+                      <div class="p-3">
+                        <div class="MealCard-module__name___1-v_g">
+                          <p id="value-item-6">ZINGY BUFFALO CHICKEN</p>
+                        </div>
+                        <p class="NutritionInfo-module__item___2aiD8">
+                          with Loaded Cauliflower
+                        </p>
+                        <div class="row">
+                          <div class="mt-2 col-md-6">
+                            <p class="NutritionInfo-module__item___2aiD8">
+                              470 Cals| 15g Carbs| 40g Protein
+                            </p>
+                          </div>
+                          <div class="col-md-6">
+                            <div
+                              id="get-item-6"
+                              class="text-center mt-2 add-button-icon"
+                            >
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="35"
+                                height="35"
+                                fill="white"
+                                class="bi bi-plus"
+                                viewBox="5 -1 10 20"
+                              >
+                                <path
+                                  d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+                                />
+                              </svg>
+                              <b
+                                style="
+                                  margin-left: -10px;
+                                  padding-right: 15px;
+                                  font-size: 1rem;
+                                "
+                                >Add</b
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="col-xl-3 col-lg-3 col-md-6 col-sm-6 m-2 display-meals-items"
+                    >
+                      <img
+                        id="img-item-7"
+                        src="https://res.cloudinary.com/freshly/image/upload/c_scale,w_640/c_crop,h_341,w_512/v1605813866/production-meal-image-1eab0dae-fb76-4485-9b1b-eaa125cae6c6.jpg"
+                        alt=""
+                      />
+                      <div class="p-3">
+                        <div class="MealCard-module__name___1-v_g">
+                          <p id="value-item-7">SAUSAGE BAKED PENNE</p>
+                        </div>
+                        <p class="NutritionInfo-module__item___2aiD8">
+                          with Sautéed Zucchini & Spinach
+                        </p>
+                        <div class="row">
+                          <div class="mt-2 col-md-6">
+                            <p class="NutritionInfo-module__item___2aiD8">
+                              570 Cals| 55g Carbs| 22g Protein
+                            </p>
+                          </div>
+                          <div class="col-md-6">
+                            <div
+                              id="get-item-7"
+                              class="text-center mt-2 add-button-icon"
+                            >
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="35"
+                                height="35"
+                                fill="white"
+                                class="bi bi-plus"
+                                viewBox="5 -1 10 20"
+                              >
+                                <path
+                                  d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+                                />
+                              </svg>
+                              <b
+                                style="
+                                  margin-left: -10px;
+                                  padding-right: 15px;
+                                  font-size: 1rem;
+                                "
+                                >Add</b
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="col-xl-3 col-lg-3 col-md-6 col-sm-6 m-2 display-meals-items"
+                    >
+                      <img
+                        id="img-item-8"
+                        src="https://res.cloudinary.com/freshly/image/upload/c_scale,w_640/c_crop,h_341,w_512/v1602724174/production-meal-image-13231efa-1905-40d4-aca2-208524d1dab1.jpg"
+                        alt=""
+                      />
+                      <div class="p-3">
+                        <div class="MealCard-module__name___1-v_g">
+                          <p id="value-item-8">CHICKEN LIVORNO</p>
+                        </div>
+                        <p class="NutritionInfo-module__item___2aiD8">
+                          with Hearty White Beans & Kale
+                        </p>
+                        <div class="row">
+                          <div class="mt-2 col-md-6">
+                            <p class="NutritionInfo-module__item___2aiD8">
+                              440 Cals| 21g Carbs| 39g Protein
+                            </p>
+                          </div>
+                          <div class="col-md-6">
+                            <div
+                              id="get-item-8"
+                              class="text-center mt-2 add-button-icon"
+                            >
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="35"
+                                height="35"
+                                fill="white"
+                                class="bi bi-plus"
+                                viewBox="5 -1 10 20"
+                              >
+                                <path
+                                  d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+                                />
+                              </svg>
+                              <b
+                                style="
+                                  margin-left: -10px;
+                                  padding-right: 15px;
+                                  font-size: 1rem;
+                                "
+                                >Add</b
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-2 cart-menu-style">
+                <div class="cart-message-style p-2">
+                  <p>My delivery for:</p>
+                  <h4 id="delievery-date">Monday, Jan 4</h4>
+                  <button
+                    id="final-order"
+                    type="submit"
+                    data-test="submit-date"
+                    class="mb-2 mt-2 btn btn-success w-100"
+                    disabled
+                  >
+                    NEXT
+                  </button>
+                  <p id="not-to-go" class="mt-1 text-center">
+                    <b class="text-danger">!</b> Add
+                    <b id="no-of-meals"> 4 </b> meals to continue.
+                  </p>
+                  <p id="set-to-go" class="mt-1 text-center">
+                    <b> All Set for Order Now.</b>
+                  </p>
+                </div>
+                <div>
+                  <p class="mt-4 text-center">
+                    Get started by adding your meals.
+                  </p>
+                </div>
+                <div id="cart-list" name="cart-list"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="step-tab-panel" data-step="step4">
+          <div class="container">
+            <div class="row mt-4">
+              <div class="col-md-7">
+                <h4 class="ml-3"><b>CHECKOUT</b></h4>
+                <div class="checkout-info">
+                  <h5 class="mb-1"><b>Delievery Address</b></h5>
+                  <div class="checkout-info-detail">
+                    <div class="row">
+                      <div class="col-6">
+                        <label for="fname">First Name</label>
+                      </div>
+                      <div class="col-6">
+                        <label for="lname">Last Name</label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-6">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="fname"
+                          onkeyup="CheckFirst()"
+                          placeholder="Enter Username"
+                          name="fname"
+                        />
+                      </div>
+                      <div class="col-6">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="fname"
+                          onkeyup="CheckFirst()"
+                          placeholder="Enter Username"
+                          name="fname"
+                        />
+                      </div>
+                    </div>
+                    <div class="row mt-4">
+                      <div class="col-12">
+                        <label for="fullname"
+                          >Full Name for Delievery Address</label
+                        >
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="fullname"
+                          onkeyup="CheckFirst()"
+                          placeholder=""
+                          name="fullname"
+                          disabled
+                        />
+                      </div>
+                    </div>
+                    <div class="row mt-4">
+                      <div class="col-12">
+                        <label for="address1">Address Line 1</label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="address1"
+                          onkeyup="CheckFirst()"
+                          placeholder=""
+                          name="address1"
+                        />
+                      </div>
+                    </div>
+                    <div class="row mt-4">
+                      <div class="col-12">
+                        <label for="address2">Address Line 2(optional)</label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="address2"
+                          onkeyup="CheckFirst()"
+                          placeholder=""
+                          name="address2"
+                        />
+                      </div>
+                    </div>
+                    <div class="row mt-4">
+                      <div class="col-4">
+                        <label for="city">City</label>
+                      </div>
+                      <div class="col-4">
+                        <label for="state">State</label>
+                      </div>
+                      <div class="col-4">
+                        <div class="row">
+                          <div class="col-6"><label for="zip">zip</label></div>
+                          <div class="col-6">
+                            <a class="text-success" href="checkout.html"
+                              >Change</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="city"
+                          onkeyup="CheckFirst()"
+                          placeholder=""
+                          name="city"
+                        />
+                      </div>
+                      <div class="col-4">
+                        <select class="form-control" id="state" name="state">
+                          <option>MD</option>
+                          <option>NY</option>
+                          <option>LA</option>
+                          <option>NJ</option>
+                        </select>
+                      </div>
+                      <div class="col-4">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="zip"
+                          onkeyup="CheckFirst()"
+                          placeholder=""
+                          name="zip"
+                          value="90001"
+                          disabled
+                        />
+                      </div>
+                    </div>
+                    <div class="row mt-4">
+                      <div class="col-12">
+                        <label for="phone">Phone</label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="phone"
+                          onkeyup="CheckFirst()"
+                          placeholder=""
+                          name="phone"
+                        />
+                      </div>
+                    </div>
+                    <div class="row mt-4">
+                      <div class="col-12">
+                        <div class="checkbox">
+                          <label
+                            ><input type="checkbox" value="" /> Receive SMS text
+                            message updates on my orders
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row mt-4">
+                      <div class="col-12">
+                        <label for="address2"
+                          >Email (We require your email to send you receipts and
+                          order updates)
+                        </label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="email"
+                          onkeyup="CheckFirst()"
+                          placeholder=""
+                          name="email"
+                          value="usama@brainxtech.com"
+                        />
+                      </div>
+                    </div>
+                    <hr />
+                    <div class="row mt-4">
+                      <div class="col-9 text-dark"><b>Today's Total</b></div>
+                      <div class="col-3 text-dark"><b>$51.95</b></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12">
+                        <button
+                          type="submit"
+                          data-test="submit-date"
+                          class="mb-2 mt-2 btn btn-block-next"
+                        >
+                          NEXT
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-5">
+                <h4 class="cart-list-heading-text"><b>ORDER SUMMARY</b></h4>
+                <div class="checkout-info-summary">
+                  <div class="row">
+                    <div class="col-12">
+                      <a class="text-success" href="checkout.html"
+                        >+Add Promo Code</a
+                      >
+                    </div>
+                  </div>
+                  <div class="row mt-2">
+                    <div class="col-12">
+                      <label for="lname">Delievery Date</label>
+                    </div>
+                  </div>
+
+                  <div class="row mt-2">
+                    <div class="col-12">
+                      <select class="form-control" id="state" name="state">
+                        <option id="current-selected-date">
+                          Wednesday,January 04
+                        </option>
+                        <option>Wednesday,January 04</option>
+                        <option>Wednesday,January 04</option>
+                        <option>Wednesday,January 04</option>
+                      </select>
+                    </div>
+                  </div>
+                  <hr />
+                  <div class="row mt-4">
+                    <div class="col-9 text-dark">4 Meals Per Week</div>
+                    <div class="col-3 text-dark">$45.96</div>
+                  </div>
+                  <div class="row mt-4">
+                    <div class="col-9 text-dark">Shipping</div>
+                    <div class="col-3 text-dark">$5.99</div>
+                  </div>
+                  <hr />
+                  <div class="row mt-2 p-3">
+                    <div class="col-9 text-dark"><b>Today's Total</b></div>
+                    <div class="col-3 text-dark"><b>$51.95</b></div>
+                  </div>
+                </div>
+                <h4 class="mt-4 cart-list-heading-text"><b>MY MEALS</b></h4>
+                <div id="checkout-div-content"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="step-footer d-none">
+        <button data-step-action="prev" class="step-btn">Previous</button>
+        <button
+          data-step-action="next"
+          id="next-button-to-day"
+          class="step-btn"
+        >
+          Next
+        </button>
+        <button data-step-action="finish" class="step-btn">Finish</button>
+      </div>
+    </div>
+
+    <script src="js/freshleyscript.js" async defer></script>
+  </body>
+</html>
