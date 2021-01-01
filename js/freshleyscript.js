@@ -111,7 +111,7 @@ $(document).ready(function () {
   });
   $("#get-item-8").click(function () {
     if (current_plan_length < plan_length) {
-      CreateCart("#cart-list", "#value-item-8");
+      CreateCart("#cart-list", "#value-item-8","#img-item-8");
     } else {
       alert("Plan Limit Exceed");
     }
@@ -120,7 +120,7 @@ $(document).ready(function () {
   });
   $("#get-item-7").click(function () {
     if (current_plan_length < plan_length) {
-      CreateCart("#cart-list", "#value-item-7");
+      CreateCart("#cart-list", "#value-item-7","#img-item-7");
     } else {
       alert("Plan Limit Exceed");
     }
@@ -129,7 +129,7 @@ $(document).ready(function () {
   });
   $("#get-item-6").click(function () {
     if (current_plan_length < plan_length) {
-      CreateCart("#cart-list", "#value-item-6");
+      CreateCart("#cart-list", "#value-item-6","#img-item-6");
     } else {
       alert("Plan Limit Exceed");
     }
@@ -138,7 +138,7 @@ $(document).ready(function () {
   });
   $("#get-item-5").click(function () {
     if (current_plan_length < plan_length) {
-      CreateCart("#cart-list", "#value-item-5");
+      CreateCart("#cart-list", "#value-item-5","#img-item-5");
     } else {
       alert("Plan Limit Exceed");
     }
@@ -147,7 +147,7 @@ $(document).ready(function () {
   });
   $("#get-item-4").click(function () {
     if (current_plan_length < plan_length) {
-      CreateCart("#cart-list", "#value-item-4");
+      CreateCart("#cart-list", "#value-item-4","#img-item-4");
     } else {
       alert("Plan Limit Exceed");
     }
@@ -156,7 +156,7 @@ $(document).ready(function () {
   });
   $("#get-item-3").click(function () {
     if (current_plan_length < plan_length) {
-      CreateCart("#cart-list", "#value-item-3");
+      CreateCart("#cart-list", "#value-item-3","#img-item-3");
     } else {
       alert("Plan Limit Exceed");
     }
@@ -165,7 +165,7 @@ $(document).ready(function () {
   });
   $("#get-item-2").click(function () {
     if (current_plan_length < plan_length) {
-      CreateCart("#cart-list", "#value-item-2");
+      CreateCart("#cart-list", "#value-item-2","#img-item-2");
     } else {
       alert("Plan Limit Exceed");
     }
@@ -174,17 +174,18 @@ $(document).ready(function () {
   });
   $("#get-item-1").click(function () {
     if (current_plan_length < plan_length) {
-      CreateCart("#cart-list", "#value-item-1");
+      CreateCart("#cart-list", "#value-item-1","#img-item-1");
     } else {
       alert("Plan Limit Exceed");
     }
 
     current_plan_length++;
   });
-  function CreateCart(cart_id, item_name_id) {
+  function CreateCart(cart_id, item_name_id,item_img_id) {
     var CartList = $(cart_id);
+    var img_in_cart=$(item_img_id).attr("src");
     var item_in_cart = $(item_name_id).text();
-    console.log(item_in_cart);
+    console.log(img_in_cart);
     var item = document.createElement("div");
     item.className = "pd-1 row mt-3 ";
     var item_image = document.createElement("div");
@@ -192,8 +193,7 @@ $(document).ready(function () {
     var image = document.createElement("img");
     image.className = "cart-list-menu-image ";
     image.style.width = "100%";
-    image.src =
-      "https://res.cloudinary.com/freshly/image/upload/c_scale,w_640/c_crop,h_341,w_512/v1607770959/production-meal-image-7a62bb89-9bcb-4f1f-9f0f-d8372698d48e.jpg";
+    image.src =img_in_cart;
     item_image.appendChild(image);
 
     var item_text = document.createElement("div");
