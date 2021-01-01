@@ -222,7 +222,6 @@ ul.order-datelist {
   background-color: white;
 }
 .display-meals-items {
-  max-width: 23%;
   box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.2);
 }
 .display-meals-items img {
@@ -310,6 +309,11 @@ ul.order-datelist {
 .cart-menu-style {
   width: 320px;
   margin: 0px;
+}
+.meal-add-button-style {
+  margin-left: -10px;
+  padding-right: 15px;
+  font-size: 1rem;
 }
 @media screen and (max-width: 610px) {
   .plans-tabs-div {
