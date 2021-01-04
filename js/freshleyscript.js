@@ -56,7 +56,7 @@ $(document).ready(function () {
   var selected_date_to_order = "";
   var item_to_highlight = "";
   var today = new Date();
-  console.log(today);
+  //console.log(today);
   for (i = 0; i < 10; i++) {
     var get_date_monday = GetDateFOrList(today, i);
     $("#list-item-" + (i + 1)).text(get_date_monday);
@@ -96,153 +96,74 @@ $(document).ready(function () {
   });
   $("#set-to-go").hide();
   $("#not-to-go").show();
+  $("#again-not-to-go").hide();
   var plan_length = 0;
   var current_plan_length = 0;
   $("#weak-plan-4").click(function () {
     plan_length = 4;
     $("#no-of-meals").text(plan_length);
+    $("#total-meals").text(plan_length);
     $("#next-button-to-day").click();
   });
   $("#weak-plan-6").click(function () {
     plan_length = 6;
     $("#no-of-meals").text(plan_length);
+    $("#total-meals").text(plan_length);
     $("#next-button-to-day").click();
   });
   $("#weak-plan-10").click(function () {
     plan_length = 10;
     $("#no-of-meals").text(plan_length);
+    $("#total-meals").text(plan_length);
     $("#next-button-to-day").click();
   });
   $("#weak-plan-12").click(function () {
     plan_length = 12;
     $("#no-of-meals").text(plan_length);
+    $("#total-meals").text(plan_length);
     $("#next-button-to-day").click();
   });
-  $("#get-item-8").click(function () {
-    if (current_plan_length < plan_length) {
-      CreateCart("#cart-list", "#value-item-8", "#img-item-8");
-    } else {
-      $("#final-order").removeAttr("disabled");
-      alert("Plan Limit Exceed");
-    }
 
-    current_plan_length++;
-    if (plan_length - current_plan_length > 0) {
-      $("#no-of-meals").text(plan_length - current_plan_length);
-    } else {
-      ShowOrderLeft();
-    }
-  });
-  $("#get-item-7").click(function () {
-    if (current_plan_length < plan_length) {
-      CreateCart("#cart-list", "#value-item-7", "#img-item-7");
-    } else {
-      $("#final-order").removeAttr("disabled");
-      alert("Plan Limit Exceed");
-    }
+  $("#meal-done").text(current_plan_length);
+  $("#final-order").addClass("cursor-not-allowed");
 
-    current_plan_length++;
-    if (plan_length - current_plan_length > 0) {
-      $("#no-of-meals").text(plan_length - current_plan_length);
-    } else {
-      ShowOrderLeft();
-    }
-  });
-  $("#get-item-6").click(function () {
-    if (current_plan_length < plan_length) {
-      CreateCart("#cart-list", "#value-item-6", "#img-item-6");
-    } else {
-      $("#final-order").removeAttr("disabled");
-      alert("Plan Limit Exceed");
-    }
+  $(".get-item-for-cart-button").click(function () {
+    var img_in_cart = $(this)
+      .parentsUntil(".parent-for-cart")
+      .find(".item-cart-img-pic")
+      .attr("src");
 
-    current_plan_length++;
-    if (plan_length - current_plan_length > 0) {
-      $("#no-of-meals").text(plan_length - current_plan_length);
-    } else {
-      ShowOrderLeft();
-    }
-  });
-  $("#get-item-5").click(function () {
-    if (current_plan_length < plan_length) {
-      CreateCart("#cart-list", "#value-item-5", "#img-item-5");
-    } else {
-      $("#final-order").removeAttr("disabled");
-      alert("Plan Limit Exceed");
-    }
+    var item_in_cart = $(this)
+      .parentsUntil(".parent-for-cart")
+      .find(".get-value-item")
+      .text();
 
+    CreateCart("#cart-list", img_in_cart, item_in_cart);
     current_plan_length++;
-    if (plan_length - current_plan_length > 0) {
-      $("#no-of-meals").text(plan_length - current_plan_length);
-    } else {
-      ShowOrderLeft();
-    }
-  });
-  $("#get-item-4").click(function () {
+    $("#meal-done").text(current_plan_length);
     if (current_plan_length < plan_length) {
-      CreateCart("#cart-list", "#value-item-4", "#img-item-4");
-    } else {
-      $("#final-order").removeAttr("disabled");
-      alert("Plan Limit Exceed");
-    }
-
-    current_plan_length++;
-    if (plan_length - current_plan_length > 0) {
       $("#no-of-meals").text(plan_length - current_plan_length);
-    } else {
+      $("#final-order").addClass("cursor-not-allowed");
+    } else if (current_plan_length - plan_length == 0) {
       ShowOrderLeft();
-    }
-  });
-  $("#get-item-3").click(function () {
-    if (current_plan_length < plan_length) {
-      CreateCart("#cart-list", "#value-item-3", "#img-item-3");
     } else {
-      $("#final-order").removeAttr("disabled");
-      alert("Plan Limit Exceed");
-    }
-
-    current_plan_length++;
-    if (plan_length - current_plan_length > 0) {
-      $("#no-of-meals").text(plan_length - current_plan_length);
-    } else {
-      ShowOrderLeft();
-    }
-  });
-  $("#get-item-2").click(function () {
-    if (current_plan_length < plan_length) {
-      CreateCart("#cart-list", "#value-item-2", "#img-item-2");
-    } else {
-      $("#final-order").removeAttr("disabled");
-      alert("Plan Limit Exceed");
-    }
-
-    current_plan_length++;
-    if (plan_length - current_plan_length > 0) {
-      $("#no-of-meals").text(plan_length - current_plan_length);
-    } else {
-      ShowOrderLeft();
-    }
-  });
-  $("#get-item-1").click(function () {
-    if (current_plan_length < plan_length) {
-      CreateCart("#cart-list", "#value-item-1", "#img-item-1");
-    } else {
-      $("#final-order").removeAttr("disabled");
-      alert("Plan Limit Exceed");
-    }
-
-    current_plan_length++;
-    if (plan_length - current_plan_length > 0) {
-      $("#no-of-meals").text(plan_length - current_plan_length);
-    } else {
-      ShowOrderLeft();
+      $("#set-to-go").hide();
+      $("#not-to-go").hide();
+      $("#again-not-to-go").show();
+      $("#no-of-meals-remove").text(current_plan_length - plan_length);
+      $("#final-order").attr("disabled", "disabled");
+      $("#final-order").removeClass("cursor-allowed ");
+      $("#final-order").addClass("cursor-not-allowed");
     }
   });
   function ShowOrderLeft() {
     $("#set-to-go").show();
     $("#not-to-go").hide();
+    $("#again-not-to-go").hide();
     $("#final-order").removeAttr("disabled");
     $("#final-order").css("background-color", " #07872b");
+    $("#final-order").removeClass("cursor-not-allowed ");
+    $("#final-order").addClass("cursor-allowed");
     $("#final-order").hover(
       function () {
         $(this).css("background-color", " #333");
@@ -253,12 +174,19 @@ $(document).ready(function () {
     );
   }
   $("#final-order").click(function () {
+    $("#checkout-plan-length").text(plan_length);
+    myplanvalues = { 4: 11.49, 6: 9.49, 10: 8.99, 12: 8.49 };
+    let price_total = plan_length * myplanvalues[plan_length];
+    let total_amount = price_total + 5.99;
+    price_total = "$ " + price_total;
+    total_amount = "$ " + total_amount;
+    $("#total-meal-amount").text(price_total);
+    $(".total-amount").text(total_amount);
     $("#next-button-to-day").click();
   });
-  function CreateCart(cart_id, item_name_id, item_img_id) {
+  function CreateCart(cart_id, img_in_cart, item_in_cart) {
     var CartList = $(cart_id);
-    var img_in_cart = $(item_img_id).attr("src");
-    var item_in_cart = $(item_name_id).text();
+
     var item = document.createElement("div");
     item.className = "pd-1 row mt-3 ";
     var item_image = document.createElement("div");
@@ -279,15 +207,6 @@ $(document).ready(function () {
     crossx.style.cursor = "pointer";
     crossx.textContent = "x";
 
-    $(crossx).click(function () {
-      $(item).remove();
-      current_plan_length--;
-      $("#no-of-meals").text(plan_length - current_plan_length);
-    });
-    item.append(item_image);
-    item.append(item_text);
-    item.append(crossx);
-    CartList.append(item);
     var Final_Cart = $("#checkout-div-content");
     var final_item = document.createElement("div");
     final_item.className = "row cart-list-menu p-3";
@@ -319,11 +238,50 @@ $(document).ready(function () {
     final_item_text_div.appendChild(final_item_name_para);
     final_item_text_div.appendChild(final_item_name_para_sub);
 
+    $(crossx).click(function () {
+      $(item).remove();
+      $(final_item).remove();
+      current_plan_length--;
+      $("#meal-done").text(current_plan_length);
+      if (current_plan_length < plan_length) {
+        $("#set-to-go").hide();
+        $("#not-to-go").show();
+        $("#again-not-to-go").hide();
+        $("#no-of-meals").text(plan_length - current_plan_length);
+        $("#final-order").attr("disabled", "disabled");
+        $("#final-order").addClass("cursor-not-allowed");
+      } else if (current_plan_length > plan_length) {
+        $("#set-to-go").hide();
+        $("#not-to-go").hide();
+        $("#again-not-to-go").show();
+        $("#no-of-meals-remove").text(current_plan_length - plan_length);
+        $("#final-order").attr("disabled", "disabled");
+        $("#final-order").addClass("cursor-not-allowed");
+      } else {
+        ShowOrderLeft();
+      }
+    });
+    item.append(item_image);
+    item.append(item_text);
+    item.append(crossx);
+    CartList.append(item);
+
     final_item.append(final_item_number);
     final_item.append(final_item_img_div);
     final_item.append(final_item_text_div);
     Final_Cart.append(final_item);
   }
+  $("#clear-all").click(function () {
+    $("#cart-list").empty();
+    $("#checkout-div-content").empty();
+    current_plan_length = 0;
+    $("#meal-done").text(current_plan_length);
+    $("#set-to-go").hide();
+    $("#not-to-go").show();
+    $("#again-not-to-go").hide();
+    $("#no-of-meals").text(plan_length - current_plan_length);
+  });
+
   function MealListener(
     show1,
     hide1,
@@ -362,7 +320,7 @@ $(document).ready(function () {
     $("#current-selected-date").text(selected_date_to_order);
   }
   function GetDateFOrList(today, count) {
-    console.log(today);
+    //console.log(today);
     var months = [
       "Jan",
       "Feb",
@@ -388,11 +346,11 @@ $(document).ready(function () {
     ];
 
     var day = today.getDay();
-    console.log(day);
+    //console.log(day);
     var daystoskip = 7 - day;
     var nextMonday = new Date();
     nextMonday.setDate(daystoskip + 2 + count);
-    console.log(nextMonday);
+    //console.log(nextMonday);
 
     var currentmonth = months[nextMonday.getMonth()] + " ";
     var currentdate = nextMonday.getDate();

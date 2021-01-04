@@ -309,12 +309,45 @@ ul.order-datelist {
 .cart-menu-style {
   width: 320px;
   margin: 0px;
+  position: fixed;
+  top: 5;
+  right: 0;
 }
 .meal-add-button-style {
   margin-left: -10px;
   padding-right: 15px;
   font-size: 1rem;
 }
+.scrollable-cart {
+  position: relative;
+  max-height: 60vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: calc(100% - 5px);
+}
+.scrollable-menu {
+  position: relative;
+  max-height: 92vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: calc(100% - 5px);
+}
+.fixed-counter {
+  position: fixed;
+  bottom: 0;
+}
+.clear-all-color {
+  cursor: pointer;
+  font-weight: 300;
+  color: #07872b;
+}
+.cursor-not-allowed {
+  cursor: not-allowed;
+}
+.cursor-allowed {
+  cursor: pointer;
+}
+
 @media screen and (max-width: 610px) {
   .plans-tabs-div {
     width: 100%;
