@@ -333,8 +333,11 @@ ul.order-datelist {
   width: calc(100% - 5px);
 }
 .fixed-counter {
-  position: fixed;
-  bottom: 0;
+  padding: 20px;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
 }
 .clear-all-color {
   cursor: pointer;
@@ -346,6 +349,28 @@ ul.order-datelist {
 }
 .cursor-allowed {
   cursor: pointer;
+}
+.accordion-card-header {
+  text-decoration: none;
+  color: #030;
+  line-height: 1.5;
+  font-weight: 900;
+  font-size: 18px;
+  font-family: Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
+  box-shadow: none;
+  background-color: none;
+}
+.accordion-card-header:hover {
+  text-decoration: none;
+  color: #07872b;
+}
+.accordion-icon-style {
+  font-size: 1.7rem;
+  position: absolute;
+  color: #07872b;
+  font-weight: 900;
+  top: 15px;
+  right: 1rem;
 }
 
 @media screen and (max-width: 610px) {

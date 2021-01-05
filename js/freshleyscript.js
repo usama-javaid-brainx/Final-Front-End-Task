@@ -1,4 +1,117 @@
 $(document).ready(function () {
+  //array of meals
+  var arrayOfItems = [
+    {
+      id: 1,
+      Title: "STEAK PEPPERCORN",
+      sub: "with Sautéed Carrots & French Green Beans",
+      specs: "510 Cals | 33g Carbs | 29g Protein",
+      image:
+        "https://res.cloudinary.com/freshly/image/upload/c_scale,w_640/c_crop,h_341,w_512/v1602724105/production-meal-image-57e49562-348b-42f2-9ca6-9f40a95c8395.jpg",
+    },
+    {
+      id: 2,
+      Title: "CAULIFLOWER SHELL BEEF",
+      sub: "with Nonna’s Soffritto & Italian Cheeses",
+      specs: "540 Cals | 48g Carbs | 30g Protein",
+      image:
+        "https://res.cloudinary.com/freshly/image/upload/c_scale,w_640/c_crop,h_341,w_512/v1607770959/production-meal-image-7a62bb89-9bcb-4f1f-9f0f-d8372698d48e.jpg",
+    },
+    {
+      id: 3,
+      Title: "PROTEIN-PACKED CHICKEN",
+      sub: "with Mozzarella & Garlicky Broccoli",
+      specs: "420 Cals| 17g Carbs| 43g Protein",
+      image:
+        "https://res.cloudinary.com/freshly/image/upload/c_scale,w_640/c_crop,h_341,w_512/v1602723110/production-meal-image-0a78bae3-2e0c-4ab7-b420-154ed262d4d0.jpg",
+    },
+    {
+      id: 4,
+      Title: "HOMESTYLE CHICKEN",
+      sub: "with Masterful Mac & Cheese",
+      specs: "600 Cals| 45g Carbs| 46g Protein",
+      image:
+        "https://res.cloudinary.com/freshly/image/upload/c_scale,w_640/c_crop,h_341,w_512/v1602721634/production-meal-image-8771fb54-2c23-4063-8007-f5024df074c2.jpg",
+    },
+    {
+      id: 5,
+      Title: "SAUSAGE & PEPPERS",
+      sub: "with Carb Swap Cauliflower Rice",
+      specs: "500 Cals| 29g Carbs| 21g Protein",
+      image:
+        "https://res.cloudinary.com/freshly/image/upload/c_scale,w_640/c_crop,h_341,w_512/v1602723731/production-meal-image-2b1d9d32-e0de-44b4-a2c5-9c7fa22203d5.jpg",
+    },
+    {
+      id: 6,
+      Title: "ZINGY BUFFALO CHICKEN",
+      sub: "with Loaded Cauliflower",
+      specs: "470 Cals| 15g Carbs| 40g Protein",
+      image:
+        "https://res.cloudinary.com/freshly/image/upload/c_scale,w_640/c_crop,h_341,w_512/v1602722020/production-meal-image-1a05b254-2fc5-4eec-9cec-5b1cde753c06.jpg",
+    },
+    {
+      id: 7,
+      Title: "SIERRA CHICKEN BOWL",
+      sub: "with Cilantro-Lime Sauce",
+      specs: "410 Cals 44g Carbs 22g Protein",
+      image:
+        "https://res.cloudinary.com/freshly/image/upload/c_scale,w_640/c_crop,h_341,w_512/v1605813866/production-meal-image-1eab0dae-fb76-4485-9b1b-eaa125cae6c6.jpg",
+    },
+    {
+      id: 8,
+      Title: "OLÉ CHICKEN & SMOKY CHILE SAUCE",
+      sub: "with Veggie Sauté & Sofrito Rice",
+      specs: "550 Cals 50g Carbs 31g Protein",
+      image:
+        "https://res.cloudinary.com/freshly/image/upload/c_scale,w_640/c_crop,h_341,w_512/v1602724174/production-meal-image-13231efa-1905-40d4-aca2-208524d1dab1.jpg",
+    },
+    {
+      id: 9,
+      Title: "SAUSAGE BAKED PENNE",
+      sub: "with Sautéed Zucchini & Spinach",
+      specs: "570 Cals| 55g Carbs| 22g Protein",
+      image:
+        "https://res.cloudinary.com/freshly/image/upload/c_scale,w_640/c_crop,h_341,w_512/v1602723731/production-meal-image-2b1d9d32-e0de-44b4-a2c5-9c7fa22203d5.jpg",
+    },
+    {
+      id: 10,
+      Title: "CHICKEN LIVORNO",
+      sub: "with Hearty White Beans & Kale",
+      specs: "440 Cals| 21g Carbs| 39g Protein",
+      image:
+        "https://res.cloudinary.com/freshly/image/upload/c_scale,w_640/c_crop,h_341,w_512/v1602723731/production-meal-image-2b1d9d32-e0de-44b4-a2c5-9c7fa22203d5.jpg",
+    },
+    {
+      id: 11,
+      Title: "WHITE BEAN TURKEY CHILI",
+      sub: "with Cilantro-Lime Rice",
+      specs: "530 Cals 64g Carbs 26g Protein",
+      image:
+        "https://res.cloudinary.com/freshly/image/upload/c_scale,w_640/c_crop,h_341,w_512/v1602722020/production-meal-image-1a05b254-2fc5-4eec-9cec-5b1cde753c06.jpg",
+    },
+    {
+      id: 12,
+      Title: "DUE SOUTH BBQ BEEF",
+      sub: "with Masterful Mac & Cheese",
+      specs: "630 Cals 45g Carbs 34g Protein",
+      image:
+        "https://res.cloudinary.com/freshly/image/upload/c_scale,w_640/c_crop,h_341,w_512/v1605813866/production-meal-image-1eab0dae-fb76-4485-9b1b-eaa125cae6c6.jpg",
+    },
+  ];
+  var myArray = {
+    "STEAK PEPPERCORN": 0,
+    "CAULIFLOWER SHELL BEEF": 0,
+    "PROTEIN-PACKED CHICKEN": 0,
+    "DUE SOUTH BBQ BEEF": 0,
+    "WHITE BEAN TURKEY CHILI": 0,
+    "CHICKEN LIVORNO": 0,
+    "SAUSAGE BAKED PENNE": 0,
+    "OLÉ CHICKEN & SMOKY CHILE SAUCE": 0,
+    "SIERRA CHICKEN BOWL": 0,
+    "ZINGY BUFFALO CHICKEN": 0,
+    "SAUSAGE & PEPPERS": 0,
+    "HOMESTYLE CHICKEN": 0,
+  };
   $("#meal-6").css({ "background-color": "#07872b", color: "white" });
   $("#menu-4-list").hide();
   $("#menu-10-list").hide();
@@ -99,25 +212,25 @@ $(document).ready(function () {
   $("#again-not-to-go").hide();
   var plan_length = 0;
   var current_plan_length = 0;
-  $("#weak-plan-4").click(function () {
+  $(".weak-plan-4").click(function () {
     plan_length = 4;
     $("#no-of-meals").text(plan_length);
     $("#total-meals").text(plan_length);
     $("#next-button-to-day").click();
   });
-  $("#weak-plan-6").click(function () {
+  $(".weak-plan-6").click(function () {
     plan_length = 6;
     $("#no-of-meals").text(plan_length);
     $("#total-meals").text(plan_length);
     $("#next-button-to-day").click();
   });
-  $("#weak-plan-10").click(function () {
+  $(".weak-plan-10").click(function () {
     plan_length = 10;
     $("#no-of-meals").text(plan_length);
     $("#total-meals").text(plan_length);
     $("#next-button-to-day").click();
   });
-  $("#weak-plan-12").click(function () {
+  $(".weak-plan-12").click(function () {
     plan_length = 12;
     $("#no-of-meals").text(plan_length);
     $("#total-meals").text(plan_length);
@@ -137,7 +250,7 @@ $(document).ready(function () {
       .parentsUntil(".parent-for-cart")
       .find(".get-value-item")
       .text();
-
+    myArray[item_in_cart] += 1;
     CreateCart("#cart-list", img_in_cart, item_in_cart);
     current_plan_length++;
     $("#meal-done").text(current_plan_length);
@@ -182,8 +295,61 @@ $(document).ready(function () {
     total_amount = "$ " + total_amount;
     $("#total-meal-amount").text(price_total);
     $(".total-amount").text(total_amount);
+
+    CreateFinalCart();
     $("#next-button-to-day").click();
   });
+
+  function CreateFinalCart() {
+    for (var key in myArray) {
+      if (myArray[key] > 0) {
+        var Final_Cart = $("#checkout-div-content");
+        var final_item = document.createElement("div");
+        final_item.className = "row cart-list-menu p-3";
+
+        var final_item_number = document.createElement("div");
+        final_item_number.className = "col-1 mt-4 font-weight-bold";
+        final_item_number.textContent = myArray[key];
+
+        var final_item_img_div = document.createElement("div");
+        final_item_img_div.className = "col-3 mt-2";
+        var final_item_img = document.createElement("img");
+        final_item_img.className = "cart-list-menu-image";
+        final_item_img.style.width = "100%";
+
+        for (var i = 0; i < arrayOfItems.length; i++) {
+          var object = arrayOfItems[i];
+
+          if (object.Title === key) {
+            var image_to_show = object.image;
+          }
+        }
+        final_item_img.src = image_to_show;
+        final_item_img_div.appendChild(final_item_img);
+
+        var final_item_text_div = document.createElement("div");
+        final_item_text_div.className = "col-8 mt-2";
+
+        var final_item_name_para = document.createElement("p");
+        final_item_name_para.className = "cart-list-menu-heading mt-2";
+        final_item_name_para.textContent = key;
+
+        var final_item_name_para_sub = document.createElement("p");
+        final_item_name_para_sub.className =
+          "text-success cart-list-menu-sub-heading";
+        final_item_name_para_sub.textContent = "with Hearty White Beans & Kale";
+
+        final_item_text_div.appendChild(final_item_name_para);
+        final_item_text_div.appendChild(final_item_name_para_sub);
+
+        final_item.append(final_item_number);
+        final_item.append(final_item_img_div);
+        final_item.append(final_item_text_div);
+        Final_Cart.append(final_item);
+      }
+    }
+  }
+
   function CreateCart(cart_id, img_in_cart, item_in_cart) {
     var CartList = $(cart_id);
 
@@ -207,40 +373,11 @@ $(document).ready(function () {
     crossx.style.cursor = "pointer";
     crossx.textContent = "x";
 
-    var Final_Cart = $("#checkout-div-content");
-    var final_item = document.createElement("div");
-    final_item.className = "row cart-list-menu p-3";
-
-    var final_item_number = document.createElement("div");
-    final_item_number.className = "col-1 mt-4";
-    final_item_number.textContent = "1";
-
-    var final_item_img_div = document.createElement("div");
-    final_item_img_div.className = "col-3 mt-2";
-    var final_item_img = document.createElement("img");
-    final_item_img.className = "cart-list-menu-image";
-    final_item_img.style.width = "100%";
-    final_item_img.src = img_in_cart;
-    final_item_img_div.appendChild(final_item_img);
-
-    var final_item_text_div = document.createElement("div");
-    final_item_text_div.className = "col-8 mt-2";
-
-    var final_item_name_para = document.createElement("p");
-    final_item_name_para.className = "cart-list-menu-heading mt-2";
-    final_item_name_para.textContent = item_in_cart;
-
-    var final_item_name_para_sub = document.createElement("p");
-    final_item_name_para_sub.className =
-      "text-success cart-list-menu-sub-heading";
-    final_item_name_para_sub.textContent = "with Hearty White Beans & Kale";
-
-    final_item_text_div.appendChild(final_item_name_para);
-    final_item_text_div.appendChild(final_item_name_para_sub);
-
     $(crossx).click(function () {
+      let key_to_remove = $(item).text();
       $(item).remove();
-      $(final_item).remove();
+      key_to_remove = key_to_remove.substring(0, key_to_remove.length - 1);
+      myArray[key_to_remove] -= 1;
       current_plan_length--;
       $("#meal-done").text(current_plan_length);
       if (current_plan_length < plan_length) {
@@ -265,11 +402,6 @@ $(document).ready(function () {
     item.append(item_text);
     item.append(crossx);
     CartList.append(item);
-
-    final_item.append(final_item_number);
-    final_item.append(final_item_img_div);
-    final_item.append(final_item_text_div);
-    Final_Cart.append(final_item);
   }
   $("#clear-all").click(function () {
     $("#cart-list").empty();
