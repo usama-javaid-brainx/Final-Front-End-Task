@@ -112,6 +112,11 @@ $(document).ready(function () {
     "SAUSAGE & PEPPERS": 0,
     "HOMESTYLE CHICKEN": 0,
   };
+  console.log("ready working");
+  function myFunction() {
+    console.log("hshhabsh");
+    alert("I am an alert box!");
+  }
   $("#meal-6").css({ "background-color": "#07872b", color: "white" });
   $("#menu-4-list").hide();
   $("#menu-10-list").hide();
@@ -205,8 +210,12 @@ $(document).ready(function () {
     HighlightList("#list-item-10");
   });
   $("#day-to-select").click(function () {
+    showContent(0, 4, "first-row");
+    showContent(4, 8, "second-row");
+    showContent(8, 12, "third-row");
     $("#next-button-to-day").click();
   });
+
   $("#set-to-go").hide();
   $("#not-to-go").show();
   $("#again-not-to-go").hide();
@@ -240,17 +249,20 @@ $(document).ready(function () {
   $("#meal-done").text(current_plan_length);
   $("#final-order").addClass("cursor-not-allowed");
 
-  $(".get-item-for-cart-button").click(function () {
+  /*$(".get-item-for-cart-button").click(function () {
+    debugger;
     var img_in_cart = $(this)
       .parentsUntil(".parent-for-cart")
       .find(".item-cart-img-pic")
       .attr("src");
-
+    console.log(img_in_cart);
     var item_in_cart = $(this)
       .parentsUntil(".parent-for-cart")
       .find(".get-value-item")
       .text();
+    alert("okay");
     myArray[item_in_cart] += 1;
+
     CreateCart("#cart-list", img_in_cart, item_in_cart);
     current_plan_length++;
     $("#meal-done").text(current_plan_length);
@@ -268,7 +280,7 @@ $(document).ready(function () {
       $("#final-order").removeClass("cursor-allowed ");
       $("#final-order").addClass("cursor-not-allowed");
     }
-  });
+  });*/
   function ShowOrderLeft() {
     $("#set-to-go").show();
     $("#not-to-go").hide();
@@ -451,6 +463,36 @@ $(document).ready(function () {
     $("#delievery-date").text(selected_date_to_order);
     $("#current-selected-date").text(selected_date_to_order);
   }
+
+  function showContent(start, end, row_id_to_append) {
+    for (var i = start; i < end; i++) {
+      var object = arrayOfItems[i];
+      var temp = document.getElementById("cart-meals-template");
+
+      img_for_cart_menu = temp.content.querySelector(".item-cart-img-pic");
+      heading_for_cart = temp.content.querySelector(".get-value-item");
+
+      add_for_cart = temp.content.querySelector(".get-item-for-cart-button");
+
+      sub_heading_for_cart = temp.content.querySelector(
+        ".NutritionInfo-module__item___2aiD8"
+      );
+      specs_for_cart = temp.content.querySelector(".specification");
+
+      heading_for_cart.textContent = object.Title;
+      sub_heading_for_cart.textContent = object.sub;
+      specs_for_cart.textContent = object.specs;
+      img_for_cart_menu.src = object.image;
+
+      var clon = temp.content.cloneNode(true);
+      add_for_cart.addEventListener("click", function () {
+        alert("okay");
+      });
+      var appendhere = document.getElementById(row_id_to_append);
+      appendhere.appendChild(clon);
+    }
+  }
+
   function GetDateFOrList(today, count) {
     //console.log(today);
     var months = [
