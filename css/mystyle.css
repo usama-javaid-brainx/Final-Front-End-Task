@@ -4,6 +4,11 @@ body {
   font-size: 0.875rem;
   line-height: 1.43em;
   font-weight: 400;
+  overflow-x: hidden;
+}
+@font-face {
+  font-family: "GoodHeadlineProCondMedium";
+  src: url("InriaSans-Regular.ttf");
 }
 .plans-menu-hero-section {
   overflow: hidden;
@@ -29,7 +34,9 @@ body {
 .w-container:after {
   clear: both;
 }
-
+.change-font {
+  font-family: GoodHeadlineProCondMedium;
+}
 .meal-box-flow-div {
   display: flex;
   margin-top: 40px;
@@ -85,7 +92,8 @@ body {
   width: 20%;
   transition: all 300ms ease;
   text-decoration: none;
-  font-family: GoodHeadlineProCondLight, sans-serif;
+  text-transform: uppercase;
+  font-family: GoodHeadlineProCondMedium, sans-serif;
 }
 .card-content:hover {
   box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.5);
@@ -113,7 +121,7 @@ body {
 }
 .section-footer-text.add-top-margin {
   padding-top: 5px;
-  font-family: "Roboto", Verdana, sans-serif;
+  font-family: Roboto, Verdana, sans-serif;
   font-weight: 500px;
   font-style: bold;
   text-align: center;
@@ -166,13 +174,12 @@ ul.menu-list li {
 .card-content-menu {
   width: 100%;
   margin-top: 20px;
+  text-transform: uppercase;
 }
 .scrollable-date-picker {
-  position: relative;
   max-height: 300px;
   overflow-x: auto;
-  width: 75%;
-  margin-left: 80px;
+  width: 100%;
 }
 ul.order-datelist {
   display: block;
@@ -200,9 +207,9 @@ ul.order-datelist {
   cursor: pointer;
 }
 .list-group-item:hover {
-  transform: translate(7px, 2px);
+  transform: translate(5px, 2px);
   z-index: 1;
-  transition: transform 0.2s;
+  transition: transform 0.3s;
 }
 .list-group-item-colored {
   border-left: 15px solid rgba(0, 100, 0, 0.7);
@@ -212,7 +219,7 @@ ul.order-datelist {
   background-color: #07872b;
   color: #ffff;
   width: 100%;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 .btn-block-next:hover {
   background-color: #333;
@@ -242,17 +249,17 @@ ul.order-datelist {
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
 .MealCard-module__name___1-v_g {
-  font-weight: 900;
-  font-family: Roboto;
-  font-size: 1rem;
+  font-weight: 300;
+  font-family: GoodHeadlineProCondMedium;
+  font-size: 1.1rem;
   line-height: 1.1rem;
   letter-spacing: 1.2px;
   color: #000;
 }
 .NutritionInfo-module__item___2aiD8 {
   font-weight: 400;
-  font-family: Roboto;
-  font-size: 0.75rem;
+  font-family: GoodHeadlineProCondMedium;
+  font-size: 0.85rem;
   line-height: 0.75rem;
   letter-spacing: normal;
   color: #757575;
@@ -307,42 +314,39 @@ ul.order-datelist {
   margin-left: -25px;
 }
 .cart-menu-style {
-  width: 320px;
-  margin: 0px;
-  position: fixed;
-  top: 5;
-  right: 0;
+  width: 360px;
 }
 .meal-add-button-style {
-  margin-left: -10px;
+  margin-left: -8px;
   padding-right: 15px;
   font-size: 1rem;
 }
 .scrollable-cart {
   position: relative;
-  max-height: 60vh;
+  max-height: 68vmin;
   overflow-y: auto;
   overflow-x: hidden;
   width: calc(100% - 5px);
 }
 .scrollable-menu {
   position: relative;
-  max-height: 92vh;
+  max-width: 1500px;
+  max-height: 93vh;
   overflow-y: auto;
   overflow-x: hidden;
   width: calc(100% - 5px);
 }
 .fixed-counter {
-  padding: 20px;
-  position: absolute;
-  top: 850px;
-  right: 0;
-  left: 0;
+  position: fixed;
+  bottom: 0;
+  right: 2%;
+  z-index: 1;
 }
 .clear-all-color {
   cursor: pointer;
-  font-weight: 300;
   color: #07872b;
+  margin-left: 9rem;
+  margin-bottom: 20px;
 }
 .cursor-not-allowed {
   cursor: not-allowed;
@@ -372,7 +376,31 @@ ul.order-datelist {
   top: 15px;
   right: 1rem;
 }
-
+.scrollable-cart {
+  position: relative;
+  max-height: 68vmin;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: calc(100% - 5px);
+}
+@media screen and (max-height: 790px) {
+  .scrollable-cart {
+    position: relative;
+    max-height: 60vmin;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: calc(100% - 5px);
+  }
+}
+@media screen and (max-height: 640px) {
+  .scrollable-cart {
+    position: relative;
+    max-height: 50vmin;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: calc(100% - 5px);
+  }
+}
 @media screen and (max-width: 610px) {
   .plans-tabs-div {
     width: 100%;

@@ -363,17 +363,17 @@ $(document).ready(function () {
     var CartList = $(cart_id);
 
     var item = document.createElement("div");
-    item.className = "pd-1 row mt-1 ";
+    item.className = "pd-1 row mt-1 ml-1";
     var item_image = document.createElement("div");
     item_image.className = "col-4 mt-2";
     var image = document.createElement("img");
-    image.className = "cart-list-menu-image ";
+    image.className = "cart-list-menu-image pd-1";
     image.style.width = "100%";
     image.src = img_in_cart;
     item_image.appendChild(image);
 
     var item_text = document.createElement("div");
-    item_text.className = "col-6 mt-3 font-weight-bold";
+    item_text.className = "col-6 mt-3 change-font font-weight-bold";
     var item_image_name = document.createElement("p");
     item_image_name.textContent = item_in_cart;
     item_text.append(item_image_name);

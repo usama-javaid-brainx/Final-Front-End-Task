@@ -55,7 +55,9 @@
           <div class="plans-menu-hero-section">
             <div class="w-container">
               <div>
-                <div class="display-1 plans-menu-title">PLANS AND MENU</div>
+                <div class="display-1 plans-menu-title change-font">
+                  PLANS AND MENU
+                </div>
               </div>
               <div class="meal-box-flow-div">
                 <img
@@ -86,7 +88,7 @@
                   class="_130-box"
                 />
               </div>
-              <div class="sub-text-for-meals">
+              <div class="sub-text-for-meals change-font">
                 Each Freshly meal is one serving, for one person, at one sitting
                 -
                 <span class="normal-green-text">just heat and eat.</span>
@@ -133,7 +135,7 @@
           </div>
 
           <div class="container-fluid d-lg-none">
-            <div class="plans-tabs-div">
+            <div class="plans-tabs-div change-font">
               <div class="sub-headline-text">Meals per week:</div>
               <div class="plans-tabs">
                 <ul class="menu-list">
@@ -177,7 +179,9 @@
               </div>
             </div>
           </div>
-          <div class="section-footer-text add-top-margin mb-3 font-weight-bold">
+          <div
+            class="section-footer-text change-font add-top-margin mb-3 font-weight-bold"
+          >
             SHIPPING&nbsp;ADDED&nbsp;AT&nbsp;CHECKOUT
           </div>
         </div>
@@ -185,17 +189,17 @@
           <div class="row">
             <div class="col text-center">
               <h6
-                class="text-uppercase my-4 mr-4 font-weight-bold d-none d-md-block"
+                class="text-uppercase change-font mt-4 my-4 mr-4 font-weight-bold d-none d-md-block"
               >
                 Choose a delivery day
               </h6>
             </div>
           </div>
           <div class="row">
-            <div class="col col-sm-10 col-md-10 col-lg-10 col-xl-5 mx-auto">
+            <div class="col-sm-10 col-md-8 col-lg-4 col-xl-3 mx-auto">
               <div
                 id="datePickerContainer"
-                class="scrollable-date-picker mb-3 mt-4"
+                class="scrollable-date-picker mb-3 mt-1"
               >
                 <ul role="listbox" class="mb-2 list-group">
                   <li id="list-item-1" class="list-group-item">
@@ -232,28 +236,30 @@
               </div>
             </div>
           </div>
-          <div class="container text-center">
-            <p class="mt-2">Scroll for more delivery dates</p>
-            <button
-              id="day-to-select"
-              type="submit"
-              class="col col-sm-10 col-md-10 col-lg-10 col-xl-4 mx-auto btn btn-block-next"
-            >
-              NEXT
-            </button>
+          <p class="mt-2 text-center">Scroll for more delivery dates</p>
+          <div class="row text-center">
+            <div class="col-sm-10 col-md-8 col-lg-4 col-xl-3 mx-auto">
+              <button
+                id="day-to-select"
+                type="submit"
+                class="btn btn-block-next"
+              >
+                NEXT
+              </button>
+            </div>
           </div>
           <hr />
           <div class="container">
             <div class="text-center">
-              <h5 class="text-uppercase my-4 d-none d-md-block">
+              <h4 class="text-uppercase my-4 d-none d-md-block change-font">
                 COMMON QUESTIONS
-              </h5>
+              </h4>
             </div>
 
             <div id="accordion">
               <div class="card border-top-0 border-right-0 border-left-0">
-                <div class="card-header" id="headingOne">
-                  <h5 class="mb-0">
+                <div class="card-header bg-transparent" id="headingOne">
+                  <h5 class="mb-0 change-font">
                     <button
                       class="btn btn-link accordion-card-header"
                       data-toggle="collapse"
@@ -288,8 +294,8 @@
                 </div>
               </div>
               <div class="card border-top-0 border-right-0 border-left-0">
-                <div class="card-header" id="headingTwo">
-                  <h5 class="mb-0">
+                <div class="card-header bg-transparent" id="headingTwo">
+                  <h5 class="mb-0 change-font">
                     <button
                       class="btn btn-link collapsed accordion-card-header"
                       data-toggle="collapse"
@@ -322,8 +328,11 @@
                 </div>
               </div>
               <div class="card border-top-0 border-right-0 border-left-0">
-                <div class="card-header" id="headingThree">
-                  <h5 class="mb-0">
+                <div
+                  class="card-header bg-transparent outline-none"
+                  id="headingThree"
+                >
+                  <h5 class="mb-0 change-font">
                     <button
                       class="btn btn-link collapsed accordion-card-header"
                       data-toggle="collapse"
@@ -360,8 +369,8 @@
         </div>
         <div class="step-tab-panel" data-step="step3">
           <div class="content-fluid">
-            <div class="row">
-              <div class="col-md-10 scrollable-menu">
+            <div class="d-flex flex-row">
+              <div class="scrollable-menu">
                 <template id="cart-meals-template">
                   <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 p-2">
                     <div class="display-meals-items">
@@ -417,7 +426,7 @@
               </div>
 
               <div
-                class="col-md-2 cart-menu-style d-none d-sm-none d-md-none d-lg-block"
+                class="cart-menu-style d-none d-sm-none d-md-none d-lg-block"
               >
                 <div class="cart-message-style p-1">
                   <p>My delivery for:</p>
@@ -436,31 +445,30 @@
                     <b id="no-of-meals"> 4 </b> meals to continue.
                   </p>
                   <p id="set-to-go" class="mt-1 text-center">
-                    <b> All Set for Order Now.</b>
+                    <b> All Set</b>
                   </p>
                   <p id="again-not-to-go" class="mt-1 text-center">
                     <b class="text-danger">!</b> Remove
                     <b id="no-of-meals-remove"> 4 </b> meals to continue.
                   </p>
                 </div>
-                <div>
-                  <p id="cart-alert-text" class="mt-4 text-center">
-                    Get started by adding your meals.
-                  </p>
-                </div>
+
+                <p id="cart-alert-text" class="mt-4 text-center">
+                  Get started by adding your meals.
+                </p>
                 <div
                   id="cart-list"
                   class="scrollable-cart"
                   name="cart-list"
                 ></div>
-                <div class="row fixed-counter">
-                  <div class="col-8">
-                    <h5>
-                      <b id="meal-done" class="text-danger">2 </b> /
-                      <b id="total-meals">5 meals</b>
-                    </h5>
-                  </div>
-                  <div id="clear-all" class="col-4 w-100">
+
+                <div class="d-flex flex-row fixed-counter">
+                  <h5>
+                    <b id="meal-done" class="text-danger">2 </b> /
+                    <b id="total-meals">5 meals</b>
+                  </h5>
+
+                  <div id="clear-all">
                     <h6 class="clear-all-color">Clear All</h6>
                   </div>
                 </div>
@@ -472,11 +480,11 @@
           <div class="container">
             <div class="row mt-4">
               <div class="col-md-7">
-                <h4 class="ml-3"><b>CHECKOUT</b></h4>
+                <h6 class="ml-3 change-font"><b>CHECKOUT</b></h6>
                 <div class="checkout-info">
-                  <h5 class="mb-1"><b>Delievery Address</b></h5>
+                  <h6 class="mb-4"><b>Delievery Address</b></h6>
                   <div class="checkout-info-detail">
-                    <div class="row">
+                    <div class="row mt-4">
                       <div class="col-6">
                         <label for="fname">First Name</label>
                       </div>
@@ -680,7 +688,9 @@
                 </div>
               </div>
               <div class="col-md-5">
-                <h4 class="cart-list-heading-text"><b>ORDER SUMMARY</b></h4>
+                <h6 class="cart-list-heading-text change-font">
+                  <b>ORDER SUMMARY</b>
+                </h6>
                 <div class="checkout-info-summary">
                   <div class="row">
                     <div class="col-12">
@@ -721,14 +731,16 @@
                     <div class="col-3 text-dark">$5.99</div>
                   </div>
                   <hr />
-                  <div class="row mt-2 p-2">
+                  <div class="row mt-2">
                     <div class="col-9 text-dark"><b>Today's Total</b></div>
                     <div class="col-3 text-dark">
                       <b class="total-amount">$51.95</b>
                     </div>
                   </div>
                 </div>
-                <h4 class="mt-4 cart-list-heading-text"><b>MY MEALS</b></h4>
+                <h6 class="mt-4 cart-list-heading-text change-font">
+                  <b>MY MEALS</b>
+                </h6>
                 <div id="checkout-div-content"></div>
               </div>
             </div>
