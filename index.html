@@ -188,11 +188,11 @@
         <div class="step-tab-panel" data-step="step2">
           <div class="row">
             <div class="col text-center">
-              <h6
+              <h5
                 class="text-uppercase change-font mt-4 my-4 mr-4 font-weight-bold d-none d-md-block"
               >
                 Choose a delivery day
-              </h6>
+              </h5>
             </div>
           </div>
           <div class="row">
@@ -402,13 +402,13 @@
                               height="35"
                               fill="white"
                               class="bi bi-plus"
-                              viewBox="5 -1 10 20"
+                              viewBox="4 -1 10 20"
                             >
                               <path
                                 d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
                               />
                             </svg>
-                            <b class="meal-add-button-style mb-2">Add</b>
+                            <b class="meal-add-button-style mb-4">Add</b>
                           </div>
                         </div>
                       </div>
@@ -445,6 +445,19 @@
                     <b id="no-of-meals"> 4 </b> meals to continue.
                   </p>
                   <p id="set-to-go" class="mt-1 text-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="30"
+                      height="30"
+                      fill="Green"
+                      class="bi bi-check"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"
+                      />
+                    </svg>
+
                     <b> All Set</b>
                   </p>
                   <p id="again-not-to-go" class="mt-1 text-center">
@@ -473,6 +486,29 @@
                   </div>
                 </div>
               </div>
+            </div>
+            <div class="d-lg-none">
+              <div class="row menu-list-small">
+                <div class="col-6">
+                  <p>My delivery for:</p>
+
+                  <h5 class="delievery-date font-weight-bold">Monday, Jan 4</h5>
+                </div>
+                <div class="col-5">
+                  <button
+                    type="submit"
+                    data-test="submit-date"
+                    class="mr-2 mt-3 btn btn-success w-100 final-order"
+                    disabled
+                  >
+                    NEXT
+                  </button>
+                </div>
+              </div>
+              <div
+                id="cart-list-small"
+                class="d-flex flex-row slide-menu-list"
+              ></div>
             </div>
           </div>
         </div>

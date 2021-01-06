@@ -361,9 +361,11 @@ $(document).ready(function () {
 
   function CreateCart(cart_id, img_in_cart, item_in_cart) {
     var CartList = $(cart_id);
-
+    var Final_Cart_Small = $("#cart-list-small");
     var item = document.createElement("div");
     item.className = "pd-1 row mt-1 ml-1";
+    var item_small = document.createElement("div");
+    item_small.className = "small-div-to-append row";
     var item_image = document.createElement("div");
     item_image.className = "col-4 mt-2";
     var image = document.createElement("img");
@@ -410,10 +412,18 @@ $(document).ready(function () {
         ShowOrderLeft();
       }
     });
+    var cln_img = item_image.cloneNode(true);
+    var cln_text = item_text.cloneNode(true);
+    var cln_cross = crossx.cloneNode(true);
     item.append(item_image);
     item.append(item_text);
     item.append(crossx);
+    item_small.append(cln_img);
+    item_small.append(cln_text);
+    item_small.append(cln_cross);
+
     CartList.append(item);
+    Final_Cart_Small.append(item_small);
   }
   $("#clear-all").click(function () {
     $("#cart-list").empty();

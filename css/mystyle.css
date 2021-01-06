@@ -376,12 +376,28 @@ ul.order-datelist {
   top: 15px;
   right: 1rem;
 }
-.scrollable-cart {
-  position: relative;
-  max-height: 68vmin;
-  overflow-y: auto;
-  overflow-x: hidden;
-  width: calc(100% - 5px);
+.menu-list-small {
+  background-color: #fff;
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 2px;
+  z-index: 1;
+}
+.slide-menu-list {
+  max-height: 100px;
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+.small-div-to-append {
+  width: 250px;
+}
+@media screen and (max-width: 990px) {
+  .scrollable-menu {
+    max-height: 70vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: calc(100% - 5px);
+  }
 }
 @media screen and (max-height: 790px) {
   .scrollable-cart {
