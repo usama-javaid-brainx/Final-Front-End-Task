@@ -112,11 +112,7 @@ $(document).ready(function () {
     "SAUSAGE & PEPPERS": 0,
     "HOMESTYLE CHICKEN": 0,
   };
-  console.log("ready working");
-  function myFunction() {
-    console.log("hshhabsh");
-    alert("I am an alert box!");
-  }
+
   $("#meal-6").css({ "background-color": "#07872b", color: "white" });
   $("#menu-4-list").hide();
   $("#menu-10-list").hide();
@@ -249,18 +245,19 @@ $(document).ready(function () {
   $("#meal-done").text(current_plan_length);
   $("#final-order").addClass("cursor-not-allowed");
 
-  /*$(".get-item-for-cart-button").click(function () {
-    debugger;
+  $(document).on("click", ".get-item-for-cart-button", function () {
+    $("#cart-alert-text").hide();
+
     var img_in_cart = $(this)
       .parentsUntil(".parent-for-cart")
       .find(".item-cart-img-pic")
       .attr("src");
-    console.log(img_in_cart);
+
     var item_in_cart = $(this)
       .parentsUntil(".parent-for-cart")
       .find(".get-value-item")
       .text();
-    alert("okay");
+
     myArray[item_in_cart] += 1;
 
     CreateCart("#cart-list", img_in_cart, item_in_cart);
@@ -280,7 +277,7 @@ $(document).ready(function () {
       $("#final-order").removeClass("cursor-allowed ");
       $("#final-order").addClass("cursor-not-allowed");
     }
-  });*/
+  });
   function ShowOrderLeft() {
     $("#set-to-go").show();
     $("#not-to-go").hide();
@@ -366,7 +363,7 @@ $(document).ready(function () {
     var CartList = $(cart_id);
 
     var item = document.createElement("div");
-    item.className = "pd-1 row mt-3 ";
+    item.className = "pd-1 row mt-1 ";
     var item_image = document.createElement("div");
     item_image.className = "col-4 mt-2";
     var image = document.createElement("img");
@@ -391,6 +388,9 @@ $(document).ready(function () {
       key_to_remove = key_to_remove.substring(0, key_to_remove.length - 1);
       myArray[key_to_remove] -= 1;
       current_plan_length--;
+      if (current_plan_length == 0) {
+        $("#cart-alert-text").show();
+      }
       $("#meal-done").text(current_plan_length);
       if (current_plan_length < plan_length) {
         $("#set-to-go").hide();
@@ -485,9 +485,6 @@ $(document).ready(function () {
       img_for_cart_menu.src = object.image;
 
       var clon = temp.content.cloneNode(true);
-      add_for_cart.addEventListener("click", function () {
-        alert("okay");
-      });
       var appendhere = document.getElementById(row_id_to_append);
       appendhere.appendChild(clon);
     }
@@ -523,7 +520,7 @@ $(document).ready(function () {
     //console.log(day);
     var daystoskip = 7 - day;
     var nextMonday = new Date();
-    nextMonday.setDate(daystoskip + 2 + count);
+    nextMonday.setDate(daystoskip + count);
     //console.log(nextMonday);
 
     var currentmonth = months[nextMonday.getMonth()] + " ";

@@ -177,7 +177,7 @@
               </div>
             </div>
           </div>
-          <div class="section-footer-text add-top-margin mb-3">
+          <div class="section-footer-text add-top-margin mb-3 font-weight-bold">
             SHIPPING&nbsp;ADDED&nbsp;AT&nbsp;CHECKOUT
           </div>
         </div>
@@ -363,44 +363,44 @@
             <div class="row">
               <div class="col-md-10 scrollable-menu">
                 <template id="cart-meals-template">
-                  <div
-                    class="col-xl-3 col-lg-3 col-md-6 col-sm-6 display-meals-items"
-                  >
-                    <img
-                      class="item-cart-img-pic"
-                      src="https://res.cloudinary.com/freshly/image/upload/c_scale,w_640/c_crop,h_341,w_512/v1602724105/production-meal-image-57e49562-348b-42f2-9ca6-9f40a95c8395.jpg"
-                      alt=""
-                    />
-                    <div class="p-3">
-                      <div class="MealCard-module__name___1-v_g">
-                        <p class="get-value-item">STEAK PEPPERCORN</p>
-                      </div>
-                      <p class="NutritionInfo-module__item___2aiD8">
-                        with Sautéed Carrots & French Green Beans
-                      </p>
-                      <div class="d-flex justify-content-between">
-                        <div class="mt-2 NutritionInfo-module__item___2aiD8">
-                          <p class="specification">
-                            510 Cals | 33g Carbs | 29g Protein
-                          </p>
+                  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 p-2">
+                    <div class="display-meals-items">
+                      <img
+                        class="item-cart-img-pic"
+                        src="https://res.cloudinary.com/freshly/image/upload/c_scale,w_640/c_crop,h_341,w_512/v1602724105/production-meal-image-57e49562-348b-42f2-9ca6-9f40a95c8395.jpg"
+                        alt=""
+                      />
+                      <div class="p-3">
+                        <div class="MealCard-module__name___1-v_g">
+                          <p class="get-value-item">STEAK PEPPERCORN</p>
                         </div>
+                        <p class="NutritionInfo-module__item___2aiD8">
+                          with Sautéed Carrots & French Green Beans
+                        </p>
+                        <div class="d-flex justify-content-between">
+                          <div class="mt-2 NutritionInfo-module__item___2aiD8">
+                            <p class="specification">
+                              510 Cals | 33g Carbs | 29g Protein
+                            </p>
+                          </div>
 
-                        <div
-                          class="text-center mt-2 add-button-icon get-item-for-cart-button"
-                        >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="35"
-                            height="35"
-                            fill="white"
-                            class="bi bi-plus"
-                            viewBox="5 -1 10 20"
+                          <div
+                            class="text-center mt-2 add-button-icon get-item-for-cart-button"
                           >
-                            <path
-                              d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
-                            />
-                          </svg>
-                          <b class="meal-add-button-style">Add</b>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="35"
+                              height="35"
+                              fill="white"
+                              class="bi bi-plus"
+                              viewBox="5 -1 10 20"
+                            >
+                              <path
+                                d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+                              />
+                            </svg>
+                            <b class="meal-add-button-style mb-2">Add</b>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -416,8 +416,10 @@
                 </div>
               </div>
 
-              <div class="col-md-2 cart-menu-style">
-                <div class="cart-message-style p-2">
+              <div
+                class="col-md-2 cart-menu-style d-none d-sm-none d-md-none d-lg-block"
+              >
+                <div class="cart-message-style p-1">
                   <p>My delivery for:</p>
                   <h4 id="delievery-date">Monday, Jan 4</h4>
                   <button
@@ -442,7 +444,7 @@
                   </p>
                 </div>
                 <div>
-                  <p class="mt-4 text-center">
+                  <p id="cart-alert-text" class="mt-4 text-center">
                     Get started by adding your meals.
                   </p>
                 </div>

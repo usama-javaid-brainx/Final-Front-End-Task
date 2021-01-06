@@ -9,7 +9,7 @@ body {
   overflow: hidden;
   padding: 115px 16px 60px;
   text-align: center;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .w-container {
@@ -222,7 +222,7 @@ ul.order-datelist {
   background-color: white;
 }
 .display-meals-items {
-  box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.2);
 }
 .display-meals-items img {
   max-width: 100%;
@@ -335,7 +335,7 @@ ul.order-datelist {
 .fixed-counter {
   padding: 20px;
   position: absolute;
-  top: 100%;
+  top: 850px;
   right: 0;
   left: 0;
 }
