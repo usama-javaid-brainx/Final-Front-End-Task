@@ -397,8 +397,8 @@ ul.order-datelist {
 }
 @media screen and (max-width: 1500px) {
   .specification {
-    font-size: 0.35rem;
-    line-height: 0.25rem;
+    font-size: 0.3rem;
+    line-height: 0.2rem;
   }
 }
 @media screen and (max-width: 990px) {
