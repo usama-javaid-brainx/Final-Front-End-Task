@@ -212,38 +212,38 @@ $(document).ready(function () {
     $("#next-button-to-day").click();
   });
 
-  $("#set-to-go").hide();
-  $("#not-to-go").show();
-  $("#again-not-to-go").hide();
+  $(".set-to-go").hide();
+  $(".not-to-go").show();
+  $(".again-not-to-go").hide();
   var plan_length = 0;
   var current_plan_length = 0;
   $(".weak-plan-4").click(function () {
     plan_length = 4;
-    $("#no-of-meals").text(plan_length);
-    $("#total-meals").text(plan_length);
+    $(".no-of-meals").text(plan_length);
+    $(".total-meals").text(plan_length);
     $("#next-button-to-day").click();
   });
   $(".weak-plan-6").click(function () {
     plan_length = 6;
-    $("#no-of-meals").text(plan_length);
-    $("#total-meals").text(plan_length);
+    $(".no-of-meals").text(plan_length);
+    $(".total-meals").text(plan_length);
     $("#next-button-to-day").click();
   });
   $(".weak-plan-10").click(function () {
     plan_length = 10;
-    $("#no-of-meals").text(plan_length);
-    $("#total-meals").text(plan_length);
+    $(".no-of-meals").text(plan_length);
+    $(".total-meals").text(plan_length);
     $("#next-button-to-day").click();
   });
   $(".weak-plan-12").click(function () {
     plan_length = 12;
-    $("#no-of-meals").text(plan_length);
-    $("#total-meals").text(plan_length);
+    $(".no-of-meals").text(plan_length);
+    $(".total-meals").text(plan_length);
     $("#next-button-to-day").click();
   });
 
-  $("#meal-done").text(current_plan_length);
-  $("#final-order").addClass("cursor-not-allowed");
+  $(".meal-done").text(current_plan_length);
+  $(".final-order").addClass("cursor-not-allowed");
 
   $(document).on("click", ".get-item-for-cart-button", function () {
     $("#cart-alert-text").hide();
@@ -262,31 +262,31 @@ $(document).ready(function () {
 
     CreateCart("#cart-list", img_in_cart, item_in_cart);
     current_plan_length++;
-    $("#meal-done").text(current_plan_length);
+    $(".meal-done").text(current_plan_length);
     if (current_plan_length < plan_length) {
-      $("#no-of-meals").text(plan_length - current_plan_length);
-      $("#final-order").addClass("cursor-not-allowed");
+      $(".no-of-meals").text(plan_length - current_plan_length);
+      $(".final-order").addClass("cursor-not-allowed");
     } else if (current_plan_length - plan_length == 0) {
       ShowOrderLeft();
     } else {
-      $("#set-to-go").hide();
-      $("#not-to-go").hide();
-      $("#again-not-to-go").show();
-      $("#no-of-meals-remove").text(current_plan_length - plan_length);
-      $("#final-order").attr("disabled", "disabled");
-      $("#final-order").removeClass("cursor-allowed ");
-      $("#final-order").addClass("cursor-not-allowed");
+      $(".set-to-go").hide();
+      $(".not-to-go").hide();
+      $(".again-not-to-go").show();
+      $(".no-of-meals-remove").text(current_plan_length - plan_length);
+      $(".final-order").attr("disabled", "disabled");
+      $(".final-order").removeClass("cursor-allowed ");
+      $(".final-order").addClass("cursor-not-allowed");
     }
   });
   function ShowOrderLeft() {
-    $("#set-to-go").show();
-    $("#not-to-go").hide();
-    $("#again-not-to-go").hide();
-    $("#final-order").removeAttr("disabled");
-    $("#final-order").css("background-color", " #07872b");
-    $("#final-order").removeClass("cursor-not-allowed ");
-    $("#final-order").addClass("cursor-allowed");
-    $("#final-order").hover(
+    $(".set-to-go").show();
+    $(".not-to-go").hide();
+    $(".again-not-to-go").hide();
+    $(".final-order").removeAttr("disabled");
+    $(".final-order").css("background-color", " #07872b");
+    $(".final-order").removeClass("cursor-not-allowed ");
+    $(".final-order").addClass("cursor-allowed");
+    $(".final-order").hover(
       function () {
         $(this).css("background-color", " #333");
       },
@@ -295,7 +295,7 @@ $(document).ready(function () {
       }
     );
   }
-  $("#final-order").click(function () {
+  $(".final-order").click(function () {
     $("#checkout-plan-length").text(plan_length);
     myplanvalues = { 4: 11.49, 6: 9.49, 10: 8.99, 12: 8.49 };
     let price_total = plan_length * myplanvalues[plan_length];
@@ -365,7 +365,7 @@ $(document).ready(function () {
     var item = document.createElement("div");
     item.className = "pd-1 row mt-1 ml-1";
     var item_small = document.createElement("div");
-    item_small.className = "small-div-to-append row";
+    item_small.className = "small-div-to-append row ";
     var item_image = document.createElement("div");
     item_image.className = "col-4 mt-2";
     var image = document.createElement("img");
@@ -383,44 +383,78 @@ $(document).ready(function () {
     crossx.className = "col-2 mt-3 font-weight-bold";
     crossx.style.cursor = "pointer";
     crossx.textContent = "x";
+    var crossx_small = document.createElement("span");
+    crossx_small.className = "fa fa-times-circle col-2 mt-3";
+    crossx_small.style.cursor = "pointer";
 
     $(crossx).click(function () {
       let key_to_remove = $(item).text();
       $(item).remove();
+      $(item_small).remove();
       key_to_remove = key_to_remove.substring(0, key_to_remove.length - 1);
       myArray[key_to_remove] -= 1;
       current_plan_length--;
       if (current_plan_length == 0) {
         $("#cart-alert-text").show();
       }
-      $("#meal-done").text(current_plan_length);
+      $(".meal-done").text(current_plan_length);
       if (current_plan_length < plan_length) {
-        $("#set-to-go").hide();
-        $("#not-to-go").show();
-        $("#again-not-to-go").hide();
-        $("#no-of-meals").text(plan_length - current_plan_length);
-        $("#final-order").attr("disabled", "disabled");
-        $("#final-order").addClass("cursor-not-allowed");
+        $(".set-to-go").hide();
+        $(".not-to-go").show();
+        $(".again-not-to-go").hide();
+        $(".no-of-meals").text(plan_length - current_plan_length);
+        $(".final-order").attr("disabled", "disabled");
+        $(".final-order").addClass("cursor-not-allowed");
       } else if (current_plan_length > plan_length) {
-        $("#set-to-go").hide();
-        $("#not-to-go").hide();
-        $("#again-not-to-go").show();
-        $("#no-of-meals-remove").text(current_plan_length - plan_length);
-        $("#final-order").attr("disabled", "disabled");
-        $("#final-order").addClass("cursor-not-allowed");
+        $(".set-to-go").hide();
+        $(".not-to-go").hide();
+        $(".again-not-to-go").show();
+        $(".no-of-meals-remove").text(current_plan_length - plan_length);
+        $(".final-order").attr("disabled", "disabled");
+        $(".final-order").addClass("cursor-not-allowed");
       } else {
         ShowOrderLeft();
       }
     });
+    $(crossx_small).click(function () {
+      let key_to_remove = $(item).text();
+      $(item).remove();
+      $(item_small).remove();
+      key_to_remove = key_to_remove.substring(0, key_to_remove.length - 1);
+      myArray[key_to_remove] -= 1;
+      current_plan_length--;
+      if (current_plan_length == 0) {
+        $("#cart-alert-text").show();
+      }
+      $(".meal-done").text(current_plan_length);
+      if (current_plan_length < plan_length) {
+        $(".set-to-go").hide();
+        $(".not-to-go").show();
+        $(".again-not-to-go").hide();
+        $(".no-of-meals").text(plan_length - current_plan_length);
+        $(".final-order").attr("disabled", "disabled");
+        $(".final-order").addClass("cursor-not-allowed");
+      } else if (current_plan_length > plan_length) {
+        $(".set-to-go").hide();
+        $(".not-to-go").hide();
+        $(".again-not-to-go").show();
+        $(".no-of-meals-remove").text(current_plan_length - plan_length);
+        $(".final-order").attr("disabled", "disabled");
+        $(".final-order").addClass("cursor-not-allowed");
+      } else {
+        ShowOrderLeft();
+      }
+    });
+
     var cln_img = item_image.cloneNode(true);
     var cln_text = item_text.cloneNode(true);
-    var cln_cross = crossx.cloneNode(true);
+    //var cln_cross = crossx.cloneNode(true);
     item.append(item_image);
     item.append(item_text);
     item.append(crossx);
     item_small.append(cln_img);
     item_small.append(cln_text);
-    item_small.append(cln_cross);
+    item_small.append(crossx_small);
 
     CartList.append(item);
     Final_Cart_Small.append(item_small);
@@ -429,13 +463,12 @@ $(document).ready(function () {
     $("#cart-list").empty();
     $("#checkout-div-content").empty();
     current_plan_length = 0;
-    $("#meal-done").text(current_plan_length);
-    $("#set-to-go").hide();
-    $("#not-to-go").show();
-    $("#again-not-to-go").hide();
-    $("#no-of-meals").text(plan_length - current_plan_length);
+    $(".meal-done").text(current_plan_length);
+    $(".set-to-go").hide();
+    $(".not-to-go").show();
+    $(".again-not-to-go").hide();
+    $(".no-of-meals").text(plan_length - current_plan_length);
   });
-
   function MealListener(
     show1,
     hide1,
@@ -470,7 +503,7 @@ $(document).ready(function () {
     item_to_highlight = listhighlight;
     var selected_date_to_order = "";
     selected_date_to_order = $(listhighlight).text();
-    $("#delievery-date").text(selected_date_to_order);
+    $(".delievery-date").text(selected_date_to_order);
     $("#current-selected-date").text(selected_date_to_order);
   }
 
@@ -530,7 +563,7 @@ $(document).ready(function () {
     //console.log(day);
     var daystoskip = 7 - day;
     var nextMonday = new Date();
-    nextMonday.setDate(daystoskip + count);
+    nextMonday.setDate(daystoskip + 8 + count);
     //console.log(nextMonday);
 
     var currentmonth = months[nextMonday.getMonth()] + " ";

@@ -259,8 +259,8 @@ ul.order-datelist {
 .NutritionInfo-module__item___2aiD8 {
   font-weight: 400;
   font-family: GoodHeadlineProCondMedium;
-  font-size: 0.85rem;
-  line-height: 0.75rem;
+  font-size: 0.75rem;
+  line-height: 0.65rem;
   letter-spacing: normal;
   color: #757575;
 }
@@ -314,7 +314,7 @@ ul.order-datelist {
   margin-left: -25px;
 }
 .cart-menu-style {
-  width: 360px;
+  width: 400px;
 }
 .meal-add-button-style {
   margin-left: -8px;
@@ -384,16 +384,26 @@ ul.order-datelist {
   z-index: 1;
 }
 .slide-menu-list {
+  display: flex;
+  flex-direction: row;
   max-height: 100px;
   overflow-y: hidden;
+  max-width: 100%;
   overflow-x: auto;
 }
 .small-div-to-append {
-  width: 250px;
+  width: 300px;
+  flex-shrink: 0;
+}
+@media screen and (max-width: 1500px) {
+  .specification {
+    font-size: 0.35rem;
+    line-height: 0.25rem;
+  }
 }
 @media screen and (max-width: 990px) {
   .scrollable-menu {
-    max-height: 70vh;
+    max-height: 63vh;
     overflow-y: auto;
     overflow-x: hidden;
     width: calc(100% - 5px);

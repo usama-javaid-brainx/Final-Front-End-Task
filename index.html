@@ -430,21 +430,20 @@
               >
                 <div class="cart-message-style p-1">
                   <p>My delivery for:</p>
-                  <h4 id="delievery-date">Monday, Jan 4</h4>
+                  <h4 class="delievery-date">Monday, Jan 4</h4>
                   <button
-                    id="final-order"
                     type="submit"
                     data-test="submit-date"
-                    class="mb-2 mt-2 btn btn-success w-100"
+                    class="mb-2 mt-2 btn btn-success w-100 final-order"
                     disabled
                   >
                     NEXT
                   </button>
-                  <p id="not-to-go" class="mt-1 text-center">
+                  <p class="mt-1 text-center not-to-go">
                     <b class="text-danger">!</b> Add
-                    <b id="no-of-meals"> 4 </b> meals to continue.
+                    <b class="no-of-meals"> 4 </b> meals to continue.
                   </p>
-                  <p id="set-to-go" class="mt-1 text-center">
+                  <p class="mt-1 text-center set-to-go">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="30"
@@ -460,9 +459,9 @@
 
                     <b> All Set</b>
                   </p>
-                  <p id="again-not-to-go" class="mt-1 text-center">
+                  <p class="mt-1 text-center again-not-to-go">
                     <b class="text-danger">!</b> Remove
-                    <b id="no-of-meals-remove"> 4 </b> meals to continue.
+                    <b class="no-of-meals-remove"> 4 </b> meals to continue.
                   </p>
                 </div>
 
@@ -477,8 +476,8 @@
 
                 <div class="d-flex flex-row fixed-counter">
                   <h5>
-                    <b id="meal-done" class="text-danger">2 </b> /
-                    <b id="total-meals">5 meals</b>
+                    <b class="text-danger meal-done">2 </b> /
+                    <b class="total-meals">5 meals</b>
                   </h5>
 
                   <div id="clear-all">
@@ -505,10 +504,41 @@
                   </button>
                 </div>
               </div>
-              <div
-                id="cart-list-small"
-                class="d-flex flex-row slide-menu-list"
-              ></div>
+              <div id="cart-list-small" class="slide-menu-list"></div>
+              <div class="row">
+                <div class="col-8">
+                  <p class="mt-1 not-to-go">
+                    <b class="text-danger">!</b> Add
+                    <b class="no-of-meals"> 4 </b> meals to continue.
+                  </p>
+                  <p class="mt-1 set-to-go">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="30"
+                      height="30"
+                      fill="Green"
+                      class="bi bi-check"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"
+                      />
+                    </svg>
+
+                    <b> All Set</b>
+                  </p>
+                  <p class="mt-1 again-not-to-go">
+                    <b class="text-danger">!</b> Remove
+                    <b class="no-of-meals-remove"> 4 </b> meals to continue.
+                  </p>
+                </div>
+                <div class="col-4">
+                  <h5>
+                    <b class="text-danger meal-done">2 </b> /
+                    <b class="total-meals">5 meals</b>
+                  </h5>
+                </div>
+              </div>
             </div>
           </div>
         </div>
