@@ -207,9 +207,9 @@ ul.order-datelist {
   cursor: pointer;
 }
 .list-group-item:hover {
-  transform: translate(5px, 2px);
-  z-index: 1;
+  transform: translate(4px, 2px);
   transition: transform 0.3s;
+  z-index: 1;
 }
 .list-group-item-colored {
   border-left: 15px solid rgba(0, 100, 0, 0.7);
@@ -260,7 +260,7 @@ ul.order-datelist {
   font-weight: 400;
   font-family: GoodHeadlineProCondMedium;
   font-size: 0.75rem;
-  line-height: 0.65rem;
+  line-height: 0.55rem;
   letter-spacing: normal;
   color: #757575;
 }
@@ -356,11 +356,12 @@ ul.order-datelist {
 }
 .accordion-card-header {
   text-decoration: none;
-  color: #030;
+  color: black;
   line-height: 1.5;
-  font-weight: 900;
+  font-weight: 400;
   font-size: 18px;
-  font-family: Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: GoodHeadlineProCondMedium, Helvetica Neue, Helvetica, Arial,
+    sans-serif;
   box-shadow: none;
   background-color: none;
 }
@@ -378,10 +379,12 @@ ul.order-datelist {
 }
 .menu-list-small {
   background-color: #fff;
-
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding: 2px;
   z-index: 1;
+}
+.menu-list-small-outline {
+  box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.12);
 }
 .slide-menu-list {
   display: flex;
@@ -395,10 +398,17 @@ ul.order-datelist {
   width: 300px;
   flex-shrink: 0;
 }
-@media screen and (max-width: 1500px) {
-  .specification {
-    font-size: 0.3rem;
-    line-height: 0.2rem;
+.border-for-specs {
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+@media screen and (max-width: 1390px) {
+  .last-specs {
+    display: none;
+  }
+}
+@media screen and (max-width: 990px) {
+  .last-specs {
+    display: block;
   }
 }
 @media screen and (max-width: 990px) {

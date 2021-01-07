@@ -5,7 +5,7 @@ $(document).ready(function () {
       id: 1,
       Title: "STEAK PEPPERCORN",
       sub: "with Sautéed Carrots & French Green Beans",
-      specs: "510 Cals | 33g Carbs | 29g Protein",
+      specs: "510 Cals 33g Carbs 29g Protein",
       image:
         "https://res.cloudinary.com/freshly/image/upload/c_scale,w_640/c_crop,h_341,w_512/v1602724105/production-meal-image-57e49562-348b-42f2-9ca6-9f40a95c8395.jpg",
     },
@@ -13,7 +13,7 @@ $(document).ready(function () {
       id: 2,
       Title: "CAULIFLOWER SHELL BEEF",
       sub: "with Nonna’s Soffritto & Italian Cheeses",
-      specs: "540 Cals | 48g Carbs | 30g Protein",
+      specs: "540 Cals 48g Carbs 30g Protein",
       image:
         "https://res.cloudinary.com/freshly/image/upload/c_scale,w_640/c_crop,h_341,w_512/v1607770959/production-meal-image-7a62bb89-9bcb-4f1f-9f0f-d8372698d48e.jpg",
     },
@@ -21,7 +21,7 @@ $(document).ready(function () {
       id: 3,
       Title: "PROTEIN-PACKED CHICKEN",
       sub: "with Mozzarella & Garlicky Broccoli",
-      specs: "420 Cals| 17g Carbs| 43g Protein",
+      specs: "420 Cals 17g Carbs 43g Protein",
       image:
         "https://res.cloudinary.com/freshly/image/upload/c_scale,w_640/c_crop,h_341,w_512/v1602723110/production-meal-image-0a78bae3-2e0c-4ab7-b420-154ed262d4d0.jpg",
     },
@@ -29,7 +29,7 @@ $(document).ready(function () {
       id: 4,
       Title: "HOMESTYLE CHICKEN",
       sub: "with Masterful Mac & Cheese",
-      specs: "600 Cals| 45g Carbs| 46g Protein",
+      specs: "600 Cals 45g Carbs 46g Protein",
       image:
         "https://res.cloudinary.com/freshly/image/upload/c_scale,w_640/c_crop,h_341,w_512/v1602721634/production-meal-image-8771fb54-2c23-4063-8007-f5024df074c2.jpg",
     },
@@ -37,7 +37,7 @@ $(document).ready(function () {
       id: 5,
       Title: "SAUSAGE & PEPPERS",
       sub: "with Carb Swap Cauliflower Rice",
-      specs: "500 Cals| 29g Carbs| 21g Protein",
+      specs: "500 Cals 29g Carbs 21g Protein",
       image:
         "https://res.cloudinary.com/freshly/image/upload/c_scale,w_640/c_crop,h_341,w_512/v1602723731/production-meal-image-2b1d9d32-e0de-44b4-a2c5-9c7fa22203d5.jpg",
     },
@@ -45,7 +45,7 @@ $(document).ready(function () {
       id: 6,
       Title: "ZINGY BUFFALO CHICKEN",
       sub: "with Loaded Cauliflower",
-      specs: "470 Cals| 15g Carbs| 40g Protein",
+      specs: "470 Cals 15g Carbs 40g Protein",
       image:
         "https://res.cloudinary.com/freshly/image/upload/c_scale,w_640/c_crop,h_341,w_512/v1602722020/production-meal-image-1a05b254-2fc5-4eec-9cec-5b1cde753c06.jpg",
     },
@@ -69,7 +69,7 @@ $(document).ready(function () {
       id: 9,
       Title: "SAUSAGE BAKED PENNE",
       sub: "with Sautéed Zucchini & Spinach",
-      specs: "570 Cals| 55g Carbs| 22g Protein",
+      specs: "570 Cals 55g Carbs 22g Protein",
       image:
         "https://res.cloudinary.com/freshly/image/upload/c_scale,w_640/c_crop,h_341,w_512/v1602723731/production-meal-image-2b1d9d32-e0de-44b4-a2c5-9c7fa22203d5.jpg",
     },
@@ -77,7 +77,7 @@ $(document).ready(function () {
       id: 10,
       Title: "CHICKEN LIVORNO",
       sub: "with Hearty White Beans & Kale",
-      specs: "440 Cals| 21g Carbs| 39g Protein",
+      specs: "440 Cals 21g Carbs 39g Protein",
       image:
         "https://res.cloudinary.com/freshly/image/upload/c_scale,w_640/c_crop,h_341,w_512/v1602723731/production-meal-image-2b1d9d32-e0de-44b4-a2c5-9c7fa22203d5.jpg",
     },
@@ -170,7 +170,7 @@ $(document).ready(function () {
   var selected_date_to_order = "";
   var item_to_highlight = "";
   var today = new Date();
-  //console.log(today);
+
   for (i = 0; i < 10; i++) {
     var get_date_monday = GetDateFOrList(today, i);
     $("#list-item-" + (i + 1)).text(get_date_monday);
@@ -178,6 +178,9 @@ $(document).ready(function () {
 
   HighlightList("#list-item-1");
 
+  $("#list-item-1").click(function () {
+    HighlightList("#list-item-1");
+  });
   $("#list-item-2").click(function () {
     HighlightList("#list-item-2");
   });
@@ -459,9 +462,9 @@ $(document).ready(function () {
     CartList.append(item);
     Final_Cart_Small.append(item_small);
   }
-  $("#clear-all").click(function () {
+  $(".clear-all").click(function () {
     $("#cart-list").empty();
-    $("#checkout-div-content").empty();
+    $("#cart-list-small").empty();
     current_plan_length = 0;
     $(".meal-done").text(current_plan_length);
     $(".set-to-go").hide();
@@ -492,6 +495,7 @@ $(document).ready(function () {
   function HighlightList(listhighlight) {
     $(item_to_highlight).css({
       "border-left": "0px solid rgba(0, 100, 0, 0.7)",
+      border: "1px solid rgba(0, 0, 0, 0.125)",
       outline: "0px solid rgba(0, 200, 0, 0.5)",
       "z-index": "0",
     });
@@ -515,16 +519,20 @@ $(document).ready(function () {
       img_for_cart_menu = temp.content.querySelector(".item-cart-img-pic");
       heading_for_cart = temp.content.querySelector(".get-value-item");
 
-      add_for_cart = temp.content.querySelector(".get-item-for-cart-button");
+      //add_for_cart = temp.content.querySelector(".get-item-for-cart-button");
 
-      sub_heading_for_cart = temp.content.querySelector(
-        ".NutritionInfo-module__item___2aiD8"
-      );
-      specs_for_cart = temp.content.querySelector(".specification");
+      sub_heading_for_cart = temp.content.querySelector(".card-sub-heading");
 
       heading_for_cart.textContent = object.Title;
       sub_heading_for_cart.textContent = object.sub;
-      specs_for_cart.textContent = object.specs;
+      var specs_to_show = object.specs;
+      var results = specs_to_show.split(" ");
+      console.log(results.length);
+      for (j = 0; j < 6; j++) {
+        let spec_text = ".specs-" + (j + 1);
+        specs_for_cart = temp.content.querySelector(spec_text);
+        specs_for_cart.textContent = results[j];
+      }
       img_for_cart_menu.src = object.image;
 
       var clon = temp.content.cloneNode(true);
