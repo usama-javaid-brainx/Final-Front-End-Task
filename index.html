@@ -533,12 +533,12 @@
               </div>
               <div id="cart-list-small" class="slide-menu-list"></div>
               <div class="row">
-                <div class="col-7">
-                  <p class="text-center not-to-go">
+                <div class="col-6">
+                  <p class="not-to-go">
                     <b class="text-danger">!</b> Add
                     <b class="no-of-meals"> 4 </b> meals to continue.
                   </p>
-                  <p class="mt-1 text-center set-to-go">
+                  <p class="mt-1 set-to-go">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="30"
@@ -554,24 +554,23 @@
 
                     <b> All Set</b>
                   </p>
-                  <p class="mt-1 text-center again-not-to-go">
+                  <p class="mt-1 again-not-to-go">
                     <b class="text-danger">!</b> Remove
                     <b class="no-of-meals-remove"> 4 </b> meals to continue.
                   </p>
                 </div>
-                <div class="col-5 text-center">
-                  <div class="row">
-                    <div class="col-6">
-                      <h5>
-                        <b class="text-danger meal-done">2 </b> /
-                        <b class="total-meals">5 meals</b>
-                      </h5>
-                    </div>
-                    <div class="col-6">
-                      <div class="clear-all">
-                        <h6 class="clear-all-color">Clear All</h6>
-                      </div>
-                    </div>
+                <div class="col-6">
+                  <div class="flex justify-content-between">
+                    <h5 class="d-inline-block">
+                      <b class="text-danger meal-done">2 </b> /
+                      <b class="total-meals">5 meals</b>
+                    </h5>
+
+                    <h6
+                      class="clear-all text-success text-right ml-4 d-inline-block"
+                    >
+                      Clear All
+                    </h6>
                   </div>
                 </div>
               </div>
@@ -638,6 +637,17 @@
                     </div>
                     <div class="row mt-4">
                       <div class="col-12">
+                        <div class="checkbox">
+                          <label
+                            ><input type="checkbox" value="" checked /> My
+                            Delievery Address name is the same as my First and
+                            Last Name
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row mt-4">
+                      <div class="col-12">
                         <label for="address1">Address Line 1</label>
                       </div>
                     </div>
@@ -681,7 +691,7 @@
                         <div class="row">
                           <div class="col-6"><label for="zip">zip</label></div>
                           <div class="col-6">
-                            <a class="text-success" href="checkout.html"
+                            <a class="text-success text-right" href=""
                               >Change</a
                             >
                           </div>
@@ -728,7 +738,7 @@
                     <div class="row">
                       <div class="col-12">
                         <input
-                          type="text"
+                          type="number"
                           class="form-control"
                           id="phone"
                           onkeyup="CheckFirst()"
@@ -741,8 +751,13 @@
                       <div class="col-12">
                         <div class="checkbox">
                           <label
-                            ><input type="checkbox" value="" /> Receive SMS text
-                            message updates on my orders
+                            ><input
+                              type="checkbox"
+                              class="checkbox"
+                              value=""
+                              checked
+                            />
+                            Receive SMS text message updates on my orders
                           </label>
                         </div>
                       </div>
@@ -771,7 +786,7 @@
                     <hr />
                     <div class="row mt-4">
                       <div class="col-9 text-dark"><b>Today's Total</b></div>
-                      <div class="col-3 text-dark total-amount">
+                      <div class="col-3 text-right text-dark total-amount">
                         <b>$51.95</b>
                       </div>
                     </div>
@@ -790,15 +805,13 @@
                 </div>
               </div>
               <div class="col-md-5">
-                <h6 class="cart-list-heading-text change-font">
+                <h6 class="change-font">
                   <b>ORDER SUMMARY</b>
                 </h6>
                 <div class="checkout-info-summary">
                   <div class="row">
                     <div class="col-12">
-                      <a class="text-success" href="checkout.html"
-                        >+Add Promo Code</a
-                      >
+                      <a class="text-success" href="">+Add Promo Code</a>
                     </div>
                   </div>
                   <div class="row mt-2">
@@ -840,10 +853,13 @@
                     </div>
                   </div>
                 </div>
-                <h6 class="mt-4 cart-list-heading-text change-font">
+                <h6 class="mt-4 change-font">
                   <b>MY MEALS</b>
                 </h6>
-                <div id="checkout-div-content"></div>
+                <div
+                  class="checkout-info-summary border-0"
+                  id="checkout-div-content"
+                ></div>
               </div>
             </div>
           </div>

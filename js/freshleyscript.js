@@ -324,7 +324,7 @@ $(document).ready(function () {
         final_item_number.textContent = myArray[key];
 
         var final_item_img_div = document.createElement("div");
-        final_item_img_div.className = "col-3 mt-2";
+        final_item_img_div.className = "col-4 mt-2";
         var final_item_img = document.createElement("img");
         final_item_img.className = "cart-list-menu-image";
         final_item_img.style.width = "100%";
@@ -340,10 +340,11 @@ $(document).ready(function () {
         final_item_img_div.appendChild(final_item_img);
 
         var final_item_text_div = document.createElement("div");
-        final_item_text_div.className = "col-8 mt-2";
+        final_item_text_div.className = "col-6 mt-2";
 
         var final_item_name_para = document.createElement("p");
-        final_item_name_para.className = "cart-list-menu-heading mt-2";
+        final_item_name_para.className =
+          "cart-list-menu-heading mt-2 change-font";
         final_item_name_para.textContent = key;
 
         var final_item_name_para_sub = document.createElement("p");

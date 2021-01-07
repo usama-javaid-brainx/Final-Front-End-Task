@@ -267,7 +267,7 @@ ul.order-datelist {
 .checkout-info {
   border: 1px solid rgba(0, 0, 0, 0.2);
   font-family: Roboto;
-  margin: 20px;
+
   padding-top: 20px;
   padding-left: 30px;
   padding-right: 30px;
@@ -282,8 +282,6 @@ ul.order-datelist {
   color: #757575;
 }
 .checkout-info-summary {
-  margin-top: 20px;
-  margin-left: -25px;
   color: rgba(0, 0, 0, 0.7);
   border: 1px solid rgba(0, 0, 0, 0.2);
   padding-top: 20px;
@@ -301,7 +299,7 @@ ul.order-datelist {
   border-radius: 10px;
 }
 .cart-list-menu-heading {
-  font-weight: 500;
+  font-weight: 400;
   color: rgba(0, 0, 0);
   font-size: 17px;
   text-transform: uppercase;
@@ -310,9 +308,7 @@ ul.order-datelist {
 .cart-list-menu-sub-heading {
   font-size: 13px;
 }
-.cart-list-heading-text {
-  margin-left: -25px;
-}
+
 .cart-menu-style {
   width: 400px;
 }
@@ -401,6 +397,7 @@ ul.order-datelist {
 .border-for-specs {
   border-right: 1px solid rgba(0, 0, 0, 0.2);
 }
+
 @media screen and (max-width: 1390px) {
   .last-specs {
     display: none;
@@ -419,6 +416,7 @@ ul.order-datelist {
     width: calc(100% - 5px);
   }
 }
+
 @media screen and (max-height: 790px) {
   .scrollable-cart {
     position: relative;
