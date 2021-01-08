@@ -1,6 +1,6 @@
 $(document).ready(function () {
   //array of meals
-  var arrayOfItems = [
+  const arrayOfItems = [
     {
       id: 1,
       Title: "STEAK PEPPERCORN",
@@ -98,7 +98,7 @@ $(document).ready(function () {
         "https://res.cloudinary.com/freshly/image/upload/c_scale,w_640/c_crop,h_341,w_512/v1605813866/production-meal-image-1eab0dae-fb76-4485-9b1b-eaa125cae6c6.jpg",
     },
   ];
-  var myArray = {
+  var CountOfItems = {
     "STEAK PEPPERCORN": 0,
     "CAULIFLOWER SHELL BEEF": 0,
     "PROTEIN-PACKED CHICKEN": 0,
@@ -113,136 +113,57 @@ $(document).ready(function () {
     "HOMESTYLE CHICKEN": 0,
   };
 
-  $("#meal-6").css({ "background-color": "#07872b", color: "white" });
+  var unselected_tab_card = "";
+  var unselected_tab_content = "";
+  var plan_length = 0;
+  var current_plan_length = 0;
+  var item_to_highlight = "";
+  MealTabHighlighter("#meal-6-highlight", "#menu-6-list");
   $("#menu-4-list").hide();
   $("#menu-10-list").hide();
   $("#menu-12-list").hide();
-  //listeners on meal
-  $("#meal-4").click(function () {
-    MealListener(
-      "#meal-4",
-      "#meal-6",
-      "#meal-10",
-      "#meal-12",
-      "#menu-4-list",
-      "#menu-6-list",
-      "#menu-10-list",
-      "#menu-12-list"
-    );
+  $(".meal-card-small").click(function () {
+    let number = $(this).text();
+    let fullId = "#menu-" + number + "-list";
+    MealTabHighlighter(this, fullId);
   });
 
-  $("#meal-6").click(function () {
-    MealListener(
-      "#meal-6",
-      "#meal-4",
-      "#meal-10",
-      "#meal-12",
-      "#menu-6-list",
-      "#menu-4-list",
-      "#menu-10-list",
-      "#menu-12-list"
-    );
-  });
-  $("#meal-10").click(function () {
-    MealListener(
-      "#meal-10",
-      "#meal-4",
-      "#meal-6",
-      "#meal-12",
-      "#menu-10-list",
-      "#menu-4-list",
-      "#menu-6-list",
-      "#menu-12-list"
-    );
-  });
-  $("#meal-12").click(function () {
-    MealListener(
-      "#meal-12",
-      "#meal-4",
-      "#meal-10",
-      "#meal-6",
-      "#menu-12-list",
-      "#menu-4-list",
-      "#menu-10-list",
-      "#menu-6-list"
-    );
-  });
-  var selected_date_to_order = "";
-  var item_to_highlight = "";
   var today = new Date();
 
   for (i = 0; i < 10; i++) {
     var get_date_monday = GetDateFOrList(today, i);
     $("#list-item-" + (i + 1)).text(get_date_monday);
+    $("#shipping-date-" + (i + 1)).text(get_date_monday);
   }
 
-  HighlightList("#list-item-1");
+  $(".list-items").click(function () {
+    HighlightList(this);
+  });
 
-  $("#list-item-1").click(function () {
-    HighlightList("#list-item-1");
-  });
-  $("#list-item-2").click(function () {
-    HighlightList("#list-item-2");
-  });
-  $("#list-item-3").click(function () {
-    HighlightList("#list-item-3");
-  });
-  $("#list-item-4").click(function () {
-    HighlightList("#list-item-4");
-  });
-  $("#list-item-5").click(function () {
-    HighlightList("#list-item-5");
-  });
-  $("#list-item-6").click(function () {
-    HighlightList("#list-item-6");
-  });
-  $("#list-item-7").click(function () {
-    HighlightList("#list-item-7");
-  });
-  $("#list-item-8").click(function () {
-    HighlightList("#list-item-8");
-  });
-  $("#list-item-9").click(function () {
-    HighlightList("#list-item-9");
-  });
-  $("#list-item-10").click(function () {
-    HighlightList("#list-item-10");
-  });
   $("#day-to-select").click(function () {
-    showContent(0, 4, "first-row");
-    showContent(4, 8, "second-row");
-    showContent(8, 12, "third-row");
+    showContent(0, 12, "first-row");
     $("#next-button-to-day").click();
   });
 
   $(".set-to-go").hide();
   $(".not-to-go").show();
   $(".again-not-to-go").hide();
-  var plan_length = 0;
-  var current_plan_length = 0;
+
   $(".weak-plan-4").click(function () {
     plan_length = 4;
-    $(".no-of-meals").text(plan_length);
-    $(".total-meals").text(plan_length);
-    $("#next-button-to-day").click();
+    SetPlanLength(plan_length);
   });
   $(".weak-plan-6").click(function () {
     plan_length = 6;
-    $(".no-of-meals").text(plan_length);
-    $(".total-meals").text(plan_length);
-    $("#next-button-to-day").click();
+    SetPlanLength(plan_length);
   });
   $(".weak-plan-10").click(function () {
     plan_length = 10;
-    $(".no-of-meals").text(plan_length);
-    $(".total-meals").text(plan_length);
-    $("#next-button-to-day").click();
+    SetPlanLength(plan_length);
   });
   $(".weak-plan-12").click(function () {
     plan_length = 12;
-    $(".no-of-meals").text(plan_length);
-    $(".total-meals").text(plan_length);
-    $("#next-button-to-day").click();
+    SetPlanLength(plan_length);
   });
 
   $(".meal-done").text(current_plan_length);
@@ -261,7 +182,7 @@ $(document).ready(function () {
       .find(".get-value-item")
       .text();
 
-    myArray[item_in_cart] += 1;
+    CountOfItems[item_in_cart] += 1;
 
     CreateCart("#cart-list", img_in_cart, item_in_cart);
     current_plan_length++;
@@ -311,17 +232,21 @@ $(document).ready(function () {
     CreateFinalCart();
     $("#next-button-to-day").click();
   });
-
+  function SetPlanLength(PlanLength) {
+    $(".no-of-meals").text(PlanLength);
+    $(".total-meals").text(PlanLength);
+    $("#next-button-to-day").click();
+  }
   function CreateFinalCart() {
-    for (var key in myArray) {
-      if (myArray[key] > 0) {
+    for (var key in CountOfItems) {
+      if (CountOfItems[key] > 0) {
         var Final_Cart = $("#checkout-div-content");
         var final_item = document.createElement("div");
         final_item.className = "row cart-list-menu p-3";
 
         var final_item_number = document.createElement("div");
         final_item_number.className = "col-1 mt-4 font-weight-bold";
-        final_item_number.textContent = myArray[key];
+        final_item_number.textContent = CountOfItems[key];
 
         var final_item_img_div = document.createElement("div");
         final_item_img_div.className = "col-4 mt-2";
@@ -391,12 +316,14 @@ $(document).ready(function () {
     crossx_small.className = "fa fa-times-circle col-2 mt-3";
     crossx_small.style.cursor = "pointer";
 
-    $(crossx).click(function () {
+    $(crossx).click(DeleteItems);
+    $(crossx_small).click(DeleteItems);
+    function DeleteItems() {
       let key_to_remove = $(item).text();
       $(item).remove();
       $(item_small).remove();
       key_to_remove = key_to_remove.substring(0, key_to_remove.length - 1);
-      myArray[key_to_remove] -= 1;
+      CountOfItems[key_to_remove] -= 1;
       current_plan_length--;
       if (current_plan_length == 0) {
         $("#cart-alert-text").show();
@@ -408,6 +335,7 @@ $(document).ready(function () {
         $(".again-not-to-go").hide();
         $(".no-of-meals").text(plan_length - current_plan_length);
         $(".final-order").attr("disabled", "disabled");
+        $(".final-order").removeClass("cursor-allowed");
         $(".final-order").addClass("cursor-not-allowed");
       } else if (current_plan_length > plan_length) {
         $(".set-to-go").hide();
@@ -419,40 +347,9 @@ $(document).ready(function () {
       } else {
         ShowOrderLeft();
       }
-    });
-    $(crossx_small).click(function () {
-      let key_to_remove = $(item).text();
-      $(item).remove();
-      $(item_small).remove();
-      key_to_remove = key_to_remove.substring(0, key_to_remove.length - 1);
-      myArray[key_to_remove] -= 1;
-      current_plan_length--;
-      if (current_plan_length == 0) {
-        $("#cart-alert-text").show();
-      }
-      $(".meal-done").text(current_plan_length);
-      if (current_plan_length < plan_length) {
-        $(".set-to-go").hide();
-        $(".not-to-go").show();
-        $(".again-not-to-go").hide();
-        $(".no-of-meals").text(plan_length - current_plan_length);
-        $(".final-order").attr("disabled", "disabled");
-        $(".final-order").addClass("cursor-not-allowed");
-      } else if (current_plan_length > plan_length) {
-        $(".set-to-go").hide();
-        $(".not-to-go").hide();
-        $(".again-not-to-go").show();
-        $(".no-of-meals-remove").text(current_plan_length - plan_length);
-        $(".final-order").attr("disabled", "disabled");
-        $(".final-order").addClass("cursor-not-allowed");
-      } else {
-        ShowOrderLeft();
-      }
-    });
-
-    var cln_img = item_image.cloneNode(true);
-    var cln_text = item_text.cloneNode(true);
-    //var cln_cross = crossx.cloneNode(true);
+    }
+    let cln_img = item_image.cloneNode(true);
+    let cln_text = item_text.cloneNode(true);
     item.append(item_image);
     item.append(item_text);
     item.append(crossx);
@@ -473,25 +370,13 @@ $(document).ready(function () {
     $(".again-not-to-go").hide();
     $(".no-of-meals").text(plan_length - current_plan_length);
   });
-  function MealListener(
-    show1,
-    hide1,
-    hide2,
-    hide3,
-    showinfo,
-    hideinfo1,
-    hideinfo2,
-    hideinfo3
-  ) {
-    $(show1).css({ "background-color": "#07872b", color: "white" });
-    $(hide1).css({ "background-color": "white", color: "#333" });
-    $(hide2).css({ "background-color": "white", color: "#333" });
-    $(hide3).css({ "background-color": "white", color: "#333" });
-    //hide show
+  function MealTabHighlighter(show, showinfo) {
+    $(unselected_tab_card).css({ "background-color": "white", color: "#333" });
+    $(unselected_tab_content).hide();
+    $(show).css({ "background-color": "#07872b", color: "white" });
     $(showinfo).show();
-    $(hideinfo1).hide();
-    $(hideinfo2).hide();
-    $(hideinfo3).hide();
+    unselected_tab_card = show;
+    unselected_tab_content = showinfo;
   }
   function HighlightList(listhighlight) {
     $(item_to_highlight).css({
@@ -520,8 +405,6 @@ $(document).ready(function () {
       img_for_cart_menu = temp.content.querySelector(".item-cart-img-pic");
       heading_for_cart = temp.content.querySelector(".get-value-item");
 
-      //add_for_cart = temp.content.querySelector(".get-item-for-cart-button");
-
       sub_heading_for_cart = temp.content.querySelector(".card-sub-heading");
 
       heading_for_cart.textContent = object.Title;
@@ -543,8 +426,7 @@ $(document).ready(function () {
   }
 
   function GetDateFOrList(today, count) {
-    //console.log(today);
-    var months = [
+    const months = [
       "Jan",
       "Feb",
       "Mar",
@@ -558,7 +440,7 @@ $(document).ready(function () {
       "Nov",
       "Dec",
     ];
-    var days = [
+    const days = [
       "Sunday",
       "Monday",
       "Tuesday",
@@ -569,11 +451,10 @@ $(document).ready(function () {
     ];
 
     var day = today.getDay();
-    //console.log(day);
     var daystoskip = 7 - day;
+    day = today.getDate();
     var nextMonday = new Date();
-    nextMonday.setDate(daystoskip + 8 + count);
-    //console.log(nextMonday);
+    nextMonday.setDate(day + daystoskip + (count + 1));
 
     var currentmonth = months[nextMonday.getMonth()] + " ";
     var currentdate = nextMonday.getDate();
@@ -585,9 +466,7 @@ $(document).ready(function () {
     return date_to_return;
   }
 
-  $("#demo").steps({
-    onFinish: function () {
-      alert("complete");
-    },
+  $("#plan-steps").steps({
+    onFinish: function () {},
   });
 });
